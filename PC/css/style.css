@@ -1,0 +1,142 @@
+.auto-play{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+
+.auto-play .item{
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: url(../images/p1.jpg) no-repeat;
+	background-size: cover;
+}
+
+.logo{
+	position: absolute;
+	top: 40px;
+    left: 45px;
+	z-index: 2;
+}
+
+.logo img{
+	display: block;
+	width: 59%;
+}
+
+ul.menu{
+	position: absolute;
+	left: 45px;
+	top: 210px;
+	z-index: 2;
+	width: 100%;
+}
+
+ul.menu li{
+	margin-bottom: 80px;
+}
+
+ul.menu li a{
+	display: block;
+	overflow: hidden;
+}
+
+ul.menu li .line-l{
+	display: block;
+	float: left;
+	height: 5px;
+	width: 20px;
+	background:#fff;
+	margin-top: 7px;
+}
+
+ul.menu li .line-l.active{
+	height:2px;
+	margin-top: 9px;
+}
+
+ul.menu li .menu-name{
+	display: block;
+	float: left;
+	font-family: "dinlight";
+	color: #fff;
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 20px;
+	margin-left: 10px;
+	margin-right: 10px; 
+	display: none;
+}
+
+ul.menu li .line-r{
+	display: block;
+	float: left;
+	height: 2px;
+	background: #fff;
+	margin-top: 9px;
+	display: none;
+}
+
+.nav{
+	position: absolute;
+	top: 20px;
+    left: 20px;
+	z-index: 2;
+	overflow: hidden;
+}
+
+.nav a{
+	display: block;
+	float: left;
+	margin-right: 10px;
+	padding: 5px 10px;
+	color: #000;
+	font-size: 14px;
+}
+
+.work-wrap{
+	position: absolute;
+	width:100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+.work-wrap .page-l{
+	width:30%;
+	height: 100%;
+	background: #fff;
+}
+
+.work-wrap .page-r{
+	width:70%;
+	height: 100%;
+}
+
+.work-wrap .page-r img{
+	display: block;
+	widows: 100%;
+	height: 100%;
+}
+
+.menu-work{
+	position: absolute;
+	top: 80px;
+	left: 0;
+	z-index: 2;
+}
+
+
+
+
+
+
+
+
+
+
+

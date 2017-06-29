@@ -1,0 +1,62 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }
+body, button, input, select, textarea { font:24px/1.5 Microsoft YaHei, arial; color:#333;}
+h1, h2, h3, h4, h5, h6{ font-size:100%; }
+address, cite, dfn, em, var { font-style:normal; }
+code, kbd, pre, samp { font-family:"dinlight"; }
+small{ font-size:12px; }
+ul, ol { list-style:none; }
+a { text-decoration:none; }
+a:active, a:visited{color:#3a3a3a;}
+sup { vertical-align:text-top; }
+sub{ vertical-align:text-bottom; }
+legend { color:#333; }
+fieldset, img { border:0; }
+button, input, select, textarea { font-size:100%; outline:none; }
+table { border-collapse:collapse; border-spacing:0; } 
+body{overflow-x:hidden;overflow-y:hidden;}
+html{overflow-x:hidden;overflow-y:hidden;}
+a, input, textarea{-webkit-tap-highlight-color: transparent;} /*聚焦时去掉背景颜色*/
+i{font-style:normal;}
+input:-webkit-autofill {-webkit-box-shadow: 0 0 0px 1000px white inset;}
+input::-webkit-input-placeholder {color:#333;}
+input:-moz-placeholder {color:#c7c4c4;}
+button{ border:none; outline:0;}
+
+/* 用本地字体 */
+@font-face{
+　　font-family: "redocn";
+　　src: url('Redocn.ttf');
+}
+@font-face{
+　　font-family: "dinlight";
+　　src: url('DIN-Light.otf');
+}
+
+/* float */
+.f-l{
+	float:left;
+}
+.f-r{
+	float:right;
+}
+
+/* clear */
+.clear{
+	clear:both;
+}
+
+/* overflow */
+.o-h{
+	overflow:hidden;
+}
+.o-v{
+	overflow:visible;
+}
+
+/* display */
+.d-n{
+	display:none;
+}
+.d-b{
+	display:block;
+}
