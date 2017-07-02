@@ -2,17 +2,18 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title></title>
+  <title>WORK</title>
   <link rel="stylesheet" type="text/css" href="css/common.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/animate.min.css">
 </head>
 <body>
 	<!-- 导航  -->
-	<div class="nav">
-		<a href="">HOME</a>
-		<a href="">WORK</a>
-		<a href="">TEAM</a>
-		<a href="">CONTACT</a>
+	<div class="nav" id="nav">
+		<a href="home.html" ch="首页" en="HOME">HOME</a>
+		<a class="active" href="work.html" ch="作品" en="WORK">WORK</a>
+		<a href="team.html" ch="团队" en="TEAM">TEAM</a>
+		<a href="contact.html" ch="联系我们" en="CONTACT">CONTACT</a>
 	</div>
 
 	<div class="work-wrap o-h">
@@ -23,53 +24,96 @@
 	
 	<!-- 作品列表 -->
 	<ul class="menu-work" id="menu_work">
-		<li>
-			<a href="#">
-				<span class="line-l"></span>
-				<span class="year-name">2017</span>
-				<span class="line-c"></span>
-				<ul class="work-list">
-					<li><a href="#">PLUTO</a></li>
-					<li><a href="#">LIMBO</a></li>
-					<li><a href="#">M.A</a></li>
-				</ul>
-				<span class="year-r"></span>
-			</a>
+		<li class="active">
+			<span class="line-l"></span>
+			<span class="year-name">2017</span>
+			<span class="line-c-l"></span>
+			<span class="line-c-r"></span>
+			<a class="first-work" href="work-detail.html">PLUTO</a>
+			<ul class="work-list">
+				<li><a href="work-detail.html">LIMBO</a></li>
+				<li><a href="work-detail.html">M.A</a></li>
+				<li><a href="work-detail.html">LIMBO</a></li>
+				<li><a href="work-detail.html">M.A</a></li>
+				<li><a href="work-detail.html">LIMBO</a></li>
+				<li><a href="work-detail.html">M.A</a></li>
+			</ul>
+			<span class="year-r"></span>
+			<br class="clear">
 		</li>
 		<li>
-			<a href="#">
-				<span class="line-l"></span>
-				<span class="year-name">2017</span>
-				<span class="line-c"></span>
-				<ul class="work-list">
-					<li><a href="#">BC</a></li>
-					<li><a href="#">MR TOKIO</a></li>
-					<li><a href="#">MOUSLA</a></li>
-				</ul>
-				<span class="year-r"></span>
-			</a>
+			<span class="line-l"></span>
+			<span class="year-name">2016</span>
+			<span class="line-c-l"></span>
+			<span class="line-c-r"></span>
+			<a class="first-work" href="work-detail.html">BC</a>
+			<ul class="work-list">
+				<li><a href="work-detail.html">MR TOKIO</a></li>
+				<li><a href="work-detail.html">MOUSLA</a></li>
+			</ul>
+			<span class="year-r"></span>
+			<br class="clear">
 		</li>
 		<li>
-			<a href="#">
-				<span class="line-l"></span>
-				<span class="year-name">2017</span>
-				<span class="line-c"></span>
-				<ul class="work-list">
-					<li><a href="#">HASKI</a></li>
-					<li><a href="#">POPY</a></li>
-					<li><a href="#">LABL</a></li>
-				</ul>
-				<span class="year-r"></span>
-			</a>
+			<span class="line-l"></span>
+			<span class="year-name">2015</span>
+			<span class="line-c-l"></span>
+			<span class="line-c-r"></span>
+			<a class="first-work" href="work-detail.html">HASKI</a>
+			<ul class="work-list">
+				<li><a href="work-detail.html">HASKI</a></li>
+				<li><a href="work-detail.html">POPY</a></li>
+				<li><a href="work-detail.html">LABL</a></li>
+			</ul>
+			<span class="year-r"></span>
+			<br class="clear">
 		</li> 
 	</ul>
 
 	<script type="text/javascript" src="js/lib/jquery.js"></script>
 	<script type="text/javascript">
 		$(function () {
+			init();
+
+			$(window).resize(function () {
+				init();
+			});
+
+			$('#nav').on('mouseover mouseout', 'a[class!="active"]', function (event) {
+				var self = $(this);
+				 if (event.type == "mouseover") {
+				 	self.width(self.width()).html(self.attr('ch')).css({
+				 		backgroundColor: '#000',
+				 		color: '#fff'
+				 	});
+				 } else if (event.type == "mouseout") {
+				 	self.html(self.attr('en')).css({
+				 		backgroundColor: '#fff',
+				 		color: '#000'
+				 	});
+				 }
+			});
 			
-			
+			$('#menu_work li').hover(function () {
+				var self = $(this);
+
+				self.find('.line-c-r, .year-r').width(($(window).width() * 0.7 - self.find('a.first-work').outerWidth() - 1) / 2);
+
+				self.addClass('active').siblings('li').removeClass('active');
+			});
 		});
+		function init () {
+			$('.line-c-l').each(function () {
+				var self = $(this);
+				self.width(self.parent('li').width() * 0.3 - self.siblings('.line-l').width() - self.siblings('.year-name').width());
+			});
+
+			$('.first-work').each(function () {
+				var self = $(this);
+				self.siblings('.line-c-r, .year-r').width(($(window).width() * 0.7 - self.outerWidth(true)) / 2);
+			});
+			
+		}
 	</script>
 </body>
 </html>

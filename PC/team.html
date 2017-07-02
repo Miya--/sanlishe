@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="css/common.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<!-- 导航  -->
+	<div class="nav" id="nav">
+		<a href="home.html" ch="首页" en="HOME">HOME</a>
+		<a href="work.html" ch="作品" en="WORK">WORK</a>
+		<a class="active" href="team.html" ch="团队" en="TEAM">TEAM</a>
+		<a href="contact.html" ch="联系我们" en="CONTACT">CONTACT</a>
+	</div>
+
+	<div class="work-wrap o-h">
+		<div class="page-l f-l">
+			<div class="team-inner" id="inner_team">
+				<span class="line-l"></span>
+				<div class="detail-tit">
+					<h3 id="tit">TEAM</h3>
+					<p class="cont">
+						三厘社是一个年轻活力的空间设计团队（平均年龄不超过30岁）。我们致力于成为最具创新精神的商业空间设计机构。如果你热爱设计，有专业精神和职业精神，同事愿意和我们一起追求“不一样”，欢迎加入我们！
+					</p>
+				</div>
+				<span class="line-r"></span>
+				<br class="clear">
+			</div>
+		</div>
+
+		<div class="page-r f-l">
+			<ul class="member" id="list_member">
+				<li>
+					<a href="javascript:void(0)" otherimg="images/avator/1.gif" style="background:url('images/avator/1.jpg');background-size:cover;">
+						<span class="mask"></span>
+					</a>
+					<div class="detail">
+						<span class="line-l"></span>
+						<div class="detail-tit">
+							<h3 class="tit">QIAN</h3>
+							<p class="cont">DESIGN DIRECTOR</p>
+						</div>
+						<span class="line-r"></span>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:void(0)" otherimg="images/avator/2.gif" style="background:url('images/avator/2.jpg');background-size:cover;">
+						<span class="mask"></span>
+					</a>
+					<div class="detail">
+						<span class="line-l"></span>
+						<div class="detail-tit">
+							<h3 class="tit">ZHANG</h3>
+							<p class="cont">DESIGN DIRECTOR</p>
+						</div>
+						<span class="line-r"></span>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:void(0)" otherimg="images/avator/3.gif" style="background:url('images/avator/3.jpg');background-size:cover;">
+						<span class="mask"></span>
+					</a>
+					<div class="detail">
+						<span class="line-l"></span>
+						<div class="detail-tit">
+							<h3 class="tit">LUO</h3>
+							<p class="cont">DESIGN DIRECTOR</p>
+						</div>
+						<span class="line-r"></span>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:void(0)" otherimg="images/avator/4.gif" style="background:url('images/avator/4.jpg');background-size:cover;">
+						<span class="mask"></span>
+					</a>
+					<div class="detail">
+						<span class="line-l"></span>
+						<div class="detail-tit">
+							<h3 class="tit">TANG</h3>
+							<p class="cont">DESIGN DIRECTOR</p>
+						</div>
+						<span class="line-r"></span>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:void(0)" otherimg="images/avator/5.gif" style="background:url('images/avator/5.jpg');background-size:cover;">
+						<span class="mask"></span>
+					</a>
+					<div class="detail">
+						<span class="line-l"></span>
+						<div class="detail-tit">
+							<h3 class="tit">GE</h3>
+							<p class="cont">DESIGN DIRECTOR</p>
+						</div>
+						<span class="line-r"></span>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:void(0)" otherimg="images/avator/6.gif" style="background:url('images/avator/6.jpg');background-size:cover;">
+						<span class="mask"></span>
+					</a>
+					<div class="detail">
+						<span class="line-l"></span>
+						<div class="detail-tit">
+							<h3 class="tit">MEI</h3>
+							<p class="cont">DESIGN DIRECTOR</p>
+						</div>
+						<span class="line-r"></span>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="js/lib/jquery.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$('ul#list_member li').css('width', 100/3 + '%');
+
+			$('#inner_team').find('.line-r').width($(window).width() * 0.3 - $('#inner_team').find('.line-l').outerWidth() - $('#tit').outerWidth() - 1);
+			
+			$('#nav').on('mouseover mouseout', 'a[class!="active"]', function (event) {
+				var self = $(this);
+				 if (event.type == "mouseover") {
+				 	self.width(self.width()).html(self.attr('ch')).css({
+				 		backgroundColor: '#000',
+				 		color: '#fff'
+				 	});
+				 } else if (event.type == "mouseout") {
+				 	self.html(self.attr('en')).css({
+				 		backgroundColor: '#fff',
+				 		color: '#000'
+				 	});
+				 }
+			});
+
+			$('#list_member li').each(function () {
+				var self = $(this);
+				var saveImg = self.find('a').attr('style');
+				self.hover(function () {
+					self.addClass('active');
+					self.find('a').attr('style', 'background:url("'+self.find('a').attr('otherimg')+'");background-size:cover;')
+					self.find('.line-l, .line-r').width((self.find('.detail').width() - self.find('.tit').outerWidth(true))/2 - 1);
+				}, function () {
+					self.find('a').attr('style', saveImg);
+					self.removeClass('active');
+				});
+			});
+
+			$(window).resize(function () {
+				$('#inner_team').find('.line-r').width($(window).width() * 0.3 - $('#inner_team').find('.line-l').outerWidth() - $('#tit').outerWidth() - 1);
+			});
+		});
+	</script>
+</body>
+</html>

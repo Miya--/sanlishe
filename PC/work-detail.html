@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="css/common.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<!-- 导航  -->
+	<div class="nav" id="nav">
+		<a href="home.html" ch="首页" en="HOME">HOME</a>
+		<a class="active" href="work.html" ch="作品" en="WORK">WORK</a>
+		<a href="team.html" ch="团队" en="TEAM">TEAM</a>
+		<a href="contact.html" ch="联系我们" en="CONTACT">CONTACT</a>
+	</div>
+
+	<!-- 作品列表 -->
+	<div class="work-nav">
+		
+	</div>
+
+	<div class="work-detail-wrap o-h">
+		<div class="page-l f-l">
+			<div class="slider" id="slider">
+				<div class="s-inner">
+			        <ul class="slide-list" id="slideList">
+			            <li><a href="javascript:void(0);"><img src="images/slider/s1.jpg" width="100%" /></a></li>
+			            <li><a href="javascript:void(0);"><img src="images/slider/s2.jpg" width="100%" /></a></li>
+			            <li><a href="javascript:void(0);"><img src="images/slider/s3.jpg" width="100%" /></a></li>
+			            <li><a href="javascript:void(0);"><img src="images/slider/s4.jpg" width="100%" /></a></li>
+			        </ul>
+		        	<div class="slide-control" id="slideControl">
+		          
+		        	</div>
+		        </div>
+		        <div class="page">
+					<a href="javascript:void(0)" class="prev">
+						<span class="icon"></span>
+						<span class="txt">LAST</span>
+					</a>
+					<a href="javascript:void(0)" class="next">
+						<span class="txt">NEXT</span>
+						<span class="icon"></span>
+					</a>
+				</div>
+		    </div>
+			<!-- slider end -->
+			
+			<div class="intro-wrap">
+				<h3 class="work-detail-tit">PLUTO</h3>
+				<p class="work-detail-intro">
+					Bob got off Pluto's lap, he grabbed Pluto's round black plastic nose and
+				</p>
+			</div>
+		</div>
+
+		<div class="page-r f-l">
+			<div class="det-inner" id="inner_det">
+				<span class="line-l"></span>
+				<div class="detail-tit">
+					<h3 id="tit">PLUTO</h3>
+					<p class="cont" id="detail_cont" ch="他走到布鲁托身边，坐在他的腿上。伊娃说：“说奶酪！”Billy Bob和布鲁托都说了咒语，然后，Billy Bob从布鲁托的大腿上走了下来。他抓住布鲁托的圆形的黑色塑料鼻子，扯掉布鲁托的客户。冥王星喊道：“哎哟！”Billy Bob不停地跑，布鲁托开始追他。">
+						He went over to Pluto and sat on his lap. Eva said,"Say Cheese!" and both Billy Bob and Pluto said the magic word.Then, as Billy Bob got off Pluto's lap. he grabbed Pluto's round black plastic nose and ripped it off Pluto's custome. Pluto yelled "Ouch!" (even though it didn't hurt).Billy Bob started running, and Pluto started Chasing him.
+					</p>
+				</div>
+				<span class="line-r"></span>
+				<br class="clear">
+			</div>
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="js/lib/jquery.js"></script>
+	<script type="text/javascript" src="js/lib/jquery.cycle.all.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$(window).resize(function () {
+				 $('#inner_det').find('.line-l, .line-r').width(($(window).width() * 0.3 - $('#tit').outerWidth()) / 2 - 1);
+			});
+
+			$('#nav').on('mouseover mouseout', 'a[class!="active"]', function (event) {
+				var self = $(this);
+				 if (event.type == "mouseover") {
+				 	self.width(self.width()).html(self.attr('ch')).css({
+				 		backgroundColor: '#000',
+				 		color: '#fff'
+				 	});
+				 } else if (event.type == "mouseout") {
+				 	self.html(self.attr('en')).css({
+				 		backgroundColor: '#fff',
+				 		color: '#000'
+				 	});
+				 }
+			});
+			
+			// slider
+			$('ul#slideList').cycle({
+	            fx: 'fade',
+	            timeout: 3000, // 幻灯片过渡间隔，单位是毫秒 (若值为0则不自动切换)
+	            pause: 1 , // 过渡的速度
+	            pager: '#slideControl',// 按钮容器元素
+	            prev:'.prev',
+        		next:'.next',
+	            pagerEvent: 'click', // 按钮驱动页面导航的事件
+	            cleartype: !$.support.opacity, // 若为true，则应用clearType修正 (专为IE提供)是否支持半透明效果
+	            activePagerClass: 'active', // 当按钮链接被激活时的css类名
+	            pagerAnchorBuilder: function(idx, slide) {  // 用于建立按钮超链接的回调函数:// function(index, DOMelement)
+	                idx += 1;
+	                return '<a href="javascript:void(0)" class="num'+idx+'"></a>';
+	            }
+	        });
+
+	        $('#inner_det').find('.line-l, .line-r').width(($(window).width() * 0.3 - $('#tit').outerWidth()) / 2 -1);
+
+	        var en = $('#detail_cont').html();
+	        $('#detail_cont').hover(function () {
+	        	$(this).css('opacity', '0').html($(this).attr('ch')).animate({opacity: 1}, 300);
+	        }, function () {
+	        	$(this).css('opacity', '0').html(en).animate({opacity: 1}, 300);
+	        });
+		});
+	</script>
+</body>
+</html>

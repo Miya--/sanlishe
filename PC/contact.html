@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="css/common.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<!-- 导航  -->
+	<div class="nav" id="nav">
+		<a href="home.html" ch="首页" en="HOME">HOME</a>
+		<a href="work.html" ch="作品" en="WORK">WORK</a>
+		<a href="team.html" ch="团队" en="TEAM">TEAM</a>
+		<a class="active" href="contact.html" ch="联系我们" en="CONTACT">CONTACT</a>
+	</div>
+
+	<div class="work-wrap o-h">
+		<div class="page-l f-l">
+			<div class="contact-inner" id="inner_contact">
+				<span class="line-l"></span>
+				<div class="detail-tit">
+					<h3>CONTACT US</h3>
+				</div>
+				<span class="line-r"></span>
+				<br class="clear">
+			</div>
+		</div>
+
+		<div class="page-r f-l" style="background: #000;position: relative;z-index: 1;">
+			<div class="contact-line" id="line_contact"></div>
+			<div class="contact-detail-wrap" id="wrap_contact_detail">
+				<div class="qrcode-wrap">
+					<div class="empty"></div>
+					<img src="images/qrcode.png">
+					<div class="empty"></div>
+					<img src="images/qrcode.png">
+					<div class="empty"></div>
+				</div>
+				<div class="outlink">
+					<a href="" class="weibo"></a>
+					<a href="" class="qq"></a>
+					<a href="" class="wechat"></a>
+				</div>
+				<div class="txt-wrap">
+					<h4>GET IN TOUCH</h4>
+					<p>Room 6111,Xicheng Plaza,151 Hanzhoung Avenue,Jianye District,Jiangsu,Nanjing</p>
+					<p>TEL:025-86503410</p>
+					<p>E-MAIL:136854201@QQ.COM</p>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="js/lib/jquery.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$('#nav').on('mouseover mouseout', 'a[class!="active"]', function (event) {
+				var self = $(this);
+				 if (event.type == "mouseover") {
+				 	self.width(self.width()).html(self.attr('ch')).css({
+				 		backgroundColor: '#000',
+				 		color: '#fff'
+				 	});
+				 } else if (event.type == "mouseout") {
+				 	self.html(self.attr('en')).css({
+				 		backgroundColor: '#fff',
+				 		color: '#000'
+				 	});
+				 }
+			});
+
+			init();
+
+			$(window).resize(function () {
+				init();
+			});
+		});
+		function init () {
+			$('#inner_contact').find('.line-r').width($('#inner_contact').width() - $('#inner_contact').find('.line-l').width() - $('#inner_contact').find('.detail-tit').outerWidth(true) - 1);
+			$('#line_contact').css('margin-top', $('#inner_contact').offset().top + 10 + 'px');
+			$('#wrap_contact_detail').css('margin-left', '-' + $('#wrap_contact_detail').outerWidth(true)/2 + 'px');
+		}
+	</script>
+</body>
+</html>
