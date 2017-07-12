@@ -102,7 +102,7 @@ ul.menu li .line-r{
 	color: #000;
 	font-size: 14px;
 	text-align: center;
-	background: #fff;
+	font-family: "dinlight";
 }
 
 .nav a.active{
@@ -310,6 +310,7 @@ a.prev span{
 	display: block;
 	float:left;
 	margin-right:5px;
+	font-family: "dinlight";
 }
 a.prev span.icon{
 	width: 17px;
@@ -370,6 +371,7 @@ a.next{
 	border-bottom: 1px solid #000;
 	width: 25%;
 	padding-bottom: 5px;
+	font-family: "dinlight";
 }
 
 .work-detail-intro{
@@ -377,6 +379,8 @@ a.next{
 	font-size: 14px;
 	font-weight: normal;
 	width: 25%;
+	font-family: "dinlight";
+	text-align: justify;
 }
 
 .det-inner{
@@ -406,6 +410,7 @@ a.next{
     width: 12%;
     padding-left: 20px;
     margin-top: 10px;
+    text-align: justify;
 }
 .det-inner .line-r{
 	width: 38%;
@@ -432,9 +437,10 @@ a.next{
 .team-inner .detail-tit h3{
 	font-weight: normal;
 	font-size: 14px;
-	padding: 0 20px;
+	padding: 0 10px;
 	height: 20px;
 	line-height: 20px;
+	font-family: "dinlight";
 }
 .team-inner .detail-tit p.cont{
     position: absolute;
@@ -444,6 +450,7 @@ a.next{
     margin-left:20px;
     line-height:22px;
     text-align: justify;
+    font-family: "redocn";
 }
 .team-inner .line-r{
 	width: 68%;
@@ -500,6 +507,7 @@ ul.member li .detail .detail-tit .tit{
     padding: 0 20px;
     height: 20px;
     line-height: 20px;
+    font-family: "dinlight";
 }
 ul.member li .detail .detail-tit .cont{
 	position: absolute;
@@ -510,6 +518,7 @@ ul.member li .detail .detail-tit .cont{
 	text-align: justify;
 	z-index: 5;
 	color: #fff;
+	font-family: "dinlight";
 }
 ul.member li a{
 	display: block;
@@ -557,6 +566,7 @@ ul.member li.active .mask{
     padding: 0 20px;
     height: 20px;
     line-height: 20px;
+    font-family: "dinlight";
 }
 .contact-inner .line-r{
 	width: 17%;
@@ -603,11 +613,13 @@ ul.member li.active .mask{
 .contact-detail-wrap h4{
 	font-size:16px;
 	margin-bottom: 10px;
+	font-family: "dinlight";
 }
 .contact-detail-wrap p{
 	font-size: 14px;
 	margin-top: 5px;
 	margin-bottom: 10px;
+	font-family: "dinlight";
 }
 .contact-detail-wrap .txt-wrap{
 	padding: 10px 6%;
