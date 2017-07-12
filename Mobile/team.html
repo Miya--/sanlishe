@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	<meta content="email=no" name="format-detection" />
+	<meta http-equiv="pragram" content="no-cache" />
+	<meta http-equiv="cache-control" content="no-cache, must-revalidate" />
+	<meta http-equiv="expires" content="0" />
+	<title>TEAM</title>
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<!-- 导航  -->
+	<h2 class="cur-nav">TEAM</h2>
+
+	<a href="javascript:void(0)" id="showMenu" class="menu-icon-black"></a>
+
+	<div class="nav" id="nav">
+		<a href="home.html" ch="首页" en="HOME">HOME</a>
+		<a href="work.html" ch="作品" en="WORK">WORK</a>
+		<a class="active" href="team.html" ch="团队" en="TEAM">TEAM</a>
+		<a href="contact.html" ch="联系我们" en="CONTACT">CONTACT</a>
+	</div>
+
+	<div class="work-detail-wrap o-h">
+		<ul class="member" id="list_member">
+			<li>
+				<a href="javascript:void(0)" otherimg="images/avator/1.gif" style="background:url('images/avator/1.jpg');background-size:cover;">
+					<span class="mask"></span>
+				</a>
+				<div class="detail">
+					<span class="line-l"></span>
+					<div class="detail-tit">
+						<h3 class="tit">QIAN</h3>
+						<p class="cont">DESIGN DIRECTOR</p>
+					</div>
+					<span class="line-r"></span>
+				</div>
+			</li>
+			<li>
+				<a href="javascript:void(0)" otherimg="images/avator/2.gif" style="background:url('images/avator/2.jpg');background-size:cover;">
+					<span class="mask"></span>
+				</a>
+				<div class="detail">
+					<span class="line-l"></span>
+					<div class="detail-tit">
+						<h3 class="tit">ZHANG</h3>
+						<p class="cont">DESIGN DIRECTOR</p>
+					</div>
+					<span class="line-r"></span>
+				</div>
+			</li>
+			<li>
+				<a href="javascript:void(0)" otherimg="images/avator/3.gif" style="background:url('images/avator/3.jpg');background-size:cover;">
+					<span class="mask"></span>
+				</a>
+				<div class="detail">
+					<span class="line-l"></span>
+					<div class="detail-tit">
+						<h3 class="tit">LUO</h3>
+						<p class="cont">DESIGN DIRECTOR</p>
+					</div>
+					<span class="line-r"></span>
+				</div>
+			</li>
+			<li>
+				<a href="javascript:void(0)" otherimg="images/avator/4.gif" style="background:url('images/avator/4.jpg');background-size:cover;">
+					<span class="mask"></span>
+				</a>
+				<div class="detail">
+					<span class="line-l"></span>
+					<div class="detail-tit">
+						<h3 class="tit">TANG</h3>
+						<p class="cont">DESIGN DIRECTOR</p>
+					</div>
+					<span class="line-r"></span>
+				</div>
+			</li>
+			<li>
+				<a href="javascript:void(0)" otherimg="images/avator/5.gif" style="background:url('images/avator/5.jpg');background-size:cover;">
+					<span class="mask"></span>
+				</a>
+				<div class="detail">
+					<span class="line-l"></span>
+					<div class="detail-tit">
+						<h3 class="tit">GE</h3>
+						<p class="cont">DESIGN DIRECTOR</p>
+					</div>
+					<span class="line-r"></span>
+				</div>
+			</li>
+			<li>
+				<a href="javascript:void(0)" otherimg="images/avator/6.gif" style="background:url('images/avator/6.jpg');background-size:cover;">
+					<span class="mask"></span>
+				</a>
+				<div class="detail">
+					<span class="line-l"></span>
+					<div class="detail-tit">
+						<h3 class="tit">MEI</h3>
+						<p class="cont">DESIGN DIRECTOR</p>
+					</div>
+					<span class="line-r"></span>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<div class="bottom-txt">
+		<div class="det-inner" id="inner_det">
+			<span class="line-l"></span>
+			<div class="detail-tit">
+				<h3 id="tit">TEAM</h3>
+				<p class="cont" id="detail_cont" style="font-family:'redocn'">
+					三厘社是一个年轻活力的空间设计团队（平均年龄不超过30岁）。我们致力于成为最具创新精神的商业空间设计机构。如果你热爱设计，有专业精神和职业精神，同事愿意和我们一起追求“不一样”，欢迎加入我们！
+				</p>
+			</div>
+			<span class="line-r"></span>
+			<br class="clear">
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="js/lib/jquery.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$('ul#list_member li').css('width', 100/3 + '%');
+			$('#inner_det').find('.line-r').width($(window).width() - $('#inner_det').find('.line-l').width() - $('#tit').outerWidth() - 1);
+
+			$('#inner_team').find('.line-r').width($(window).width() * 0.3 - $('#inner_team').find('.line-l').outerWidth() - $('#tit').outerWidth() - 1);
+			
+			$('#list_member li').each(function () {
+				var self = $(this);
+				var saveImg = self.find('a').attr('style');
+				self.hover(function () {
+					self.addClass('active');
+					self.find('a').attr('style', 'background:url("'+self.find('a').attr('otherimg')+'");background-size:cover;')
+					self.find('.line-l, .line-r').width((self.find('.detail').width() - self.find('.tit').outerWidth(true))/2 - 1);
+				}, function () {
+					self.find('a').attr('style', saveImg);
+					self.removeClass('active');
+				});
+			});
+
+			$(window).resize(function () {
+				$('#inner_team').find('.line-r').width($(window).width() * 0.3 - $('#inner_team').find('.line-l').outerWidth() - $('#tit').outerWidth() - 1);
+				$('#inner_det').find('.line-r').width($(window).width() - $('#inner_det').find('.line-l').width() - $('#tit').outerWidth() - 1);
+			});
+		});
+	</script>
+</body>
+</html>

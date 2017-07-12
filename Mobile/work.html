@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	<meta content="email=no" name="format-detection" />
+	<meta http-equiv="pragram" content="no-cache" />
+	<meta http-equiv="cache-control" content="no-cache, must-revalidate" />
+	<meta http-equiv="expires" content="0" />
+  	<title>WORK</title>
+  	<link rel="stylesheet" type="text/css" href="css/common.css">
+  	<link rel="stylesheet" type="text/css" href="css/style.css">
+  	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
+</head>
+<body>
+	<!-- 导航  -->
+	<h2 class="cur-nav">WORK</h2>
+
+	<a href="javascript:void(0)" id="showMenu" class="menu-icon"></a>
+
+	<div class="nav" id="nav">
+		<a href="home.html" ch="首页" en="HOME">HOME</a>
+		<a class="active" href="work.html" ch="作品" en="WORK">WORK</a>
+		<a href="team.html" ch="团队" en="TEAM">TEAM</a>
+		<a href="contact.html" ch="联系我们" en="CONTACT">CONTACT</a>
+	</div>
+
+	<div class="work-wrap o-h">
+		<div class="page-l f-l"></div>
+
+		<div class="page-r f-l" style="background: url(images/p2.jpg) no-repeat; background-size: cover;"></div>
+	</div>
+	
+	<!-- 作品列表 -->
+	<ul class="menu-work" id="menu_work">
+		<li class="active">
+			<span class="line-l"></span>
+			<span class="year-name">2017</span>
+			<span class="line-c-l"></span>
+			<span class="line-c-r"></span>
+			<a class="first-work" href="work-detail.html">PLUTO</a>
+			<ul class="work-list">
+				<li><a href="work-detail.html">LIMBO</a></li>
+				<li><a href="work-detail.html">M.A</a></li>
+				<li><a href="work-detail.html">LIMBO</a></li>
+				<li><a href="work-detail.html">M.A</a></li>
+				<li><a href="work-detail.html">LIMBO</a></li>
+				<li><a href="work-detail.html">M.A</a></li>
+			</ul>
+			<span class="year-r"></span>
+			<br class="clear">
+		</li>
+		<li>
+			<span class="line-l"></span>
+			<span class="year-name">2016</span>
+			<span class="line-c-l"></span>
+			<span class="line-c-r"></span>
+			<a class="first-work" href="work-detail.html">BC</a>
+			<ul class="work-list">
+				<li><a href="work-detail.html">MR TOKIO</a></li>
+				<li><a href="work-detail.html">MOUSLA</a></li>
+			</ul>
+			<span class="year-r"></span>
+			<br class="clear">
+		</li>
+		<li>
+			<span class="line-l"></span>
+			<span class="year-name">2015</span>
+			<span class="line-c-l"></span>
+			<span class="line-c-r"></span>
+			<a class="first-work" href="work-detail.html">HASKI</a>
+			<ul class="work-list">
+				<li><a href="work-detail.html">HASKI</a></li>
+				<li><a href="work-detail.html">POPY</a></li>
+				<li><a href="work-detail.html">LABL</a></li>
+			</ul>
+			<span class="year-r"></span>
+			<br class="clear">
+		</li> 
+	</ul>
+
+	<script type="text/javascript" src="js/lib/jquery.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			init();
+
+			$(window).resize(function () {
+				init();
+			});
+			
+			$('#menu_work li').hover(function () {
+				var self = $(this);
+
+				self.find('.line-c-r, .year-r').width(($(window).width() * 0.66 - self.find('a.first-work').outerWidth() - 1) / 2);
+
+				self.addClass('active').siblings('li').removeClass('active');
+			});
+
+			
+		});
+		function init () {
+			$('.line-c-l').each(function () {
+				var self = $(this);
+				self.width(self.parent('li').width() * 0.34 - self.siblings('.line-l').width() - self.siblings('.year-name').width());
+			});
+
+			$('.first-work').each(function () {
+				var self = $(this);
+				self.siblings('.line-c-r, .year-r').width(($(window).width() * 0.66 - self.outerWidth() - 1) / 2);
+			});
+			
+		}
+	</script>
+</body>
+</html>

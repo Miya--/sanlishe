@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	<meta content="email=no" name="format-detection" />
+	<meta http-equiv="pragram" content="no-cache" />
+	<meta http-equiv="cache-control" content="no-cache, must-revalidate" />
+	<meta http-equiv="expires" content="0" />
+	<title>HOME</title>
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body style="background:#000;">
+	<div class="auto-play" id="auto_play">
+		<div class="item" style="background: url(images/p1.jpg) no-repeat;background-size: cover;"></div>
+		<div class="item" style="background: url(images/p2.jpg) no-repeat;background-size: cover;"></div>
+		<div class="item" style="background: url(images/p3.jpg) no-repeat;background-size: cover;"></div>
+		<div class="item" style="background: url(images/p4.jpg) no-repeat;background-size: cover;"></div>
+	</div>
+
+	<div class="logo" id="logo"><img src="images/logo.png"></div>
+	
+	<div class="menu-wrap" id="wrap_menu">
+		<ul class="menu" id="menu">
+			<li>
+				<a href="work.html">
+					<span class="line-l"></span>
+					<span class="menu-name">WORK</span>
+					<span class="line-r"></span>
+				</a>
+			</li>
+			<li>
+				<a href="team.html">
+					<span class="line-l"></span>
+					<span class="menu-name">TEAM</span>
+					<span class="line-r"></span>
+				</a>
+			</li>
+			<li>
+				<a href="contact.html">
+					<span class="line-l"></span>
+					<span class="menu-name">CONTACT</span>
+					<span class="line-r"></span>
+				</a>
+			</li>
+		</ul>
+	</div>
+
+	<script type="text/javascript" src="js/lib/jquery.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			init();
+
+			$(window).resize(function () {
+				resizeInit();
+			});
+
+			var auto_play_length = $('#auto_play .item').length;
+			var index = 0;
+			play();
+			function play () {
+				$('#auto_play .item').eq(index).css('opacity', '0.4').show().animate({opacity: 1}, 2000).siblings('div').hide();
+				if (index < auto_play_length - 1) {
+					index ++;
+				} else if (index == (auto_play_length - 1)) {
+					index = 0;
+				}
+			}
+			var player = setInterval(play, 6000);
+			
+		});
+
+		function init () {
+			$('#wrap_menu').css({
+				'height' : $(window).height() - $('#logo').outerHeight(true),
+				'top' : $('#logo').outerHeight(true)
+			});
+
+			$('#menu li').each(function () {
+				var self = $(this);
+
+				self.find('.line-r').width($(window).width() - 45 - self.find('.line-l').outerWidth() - self.find('.menu-name').outerWidth());
+
+				self.hover(function () {
+					self.find('.line-l').addClass('active');
+					self.find('.menu-name, .line-r').stop().show('normal');
+				}, function () {
+					self.find('.line-l').removeClass('active');
+					self.find('.menu-name, .line-r').hide();
+				});
+			});
+		}
+
+		function resizeInit () {
+			$('#wrap_menu').css({
+				'height' : $(window).height() - $('#logo').outerHeight(true),
+				'top' : $('#logo').outerHeight(true)
+			});
+
+			$('#menu li').each(function () {
+				var self = $(this);
+				self.find('.line-r').width($(window).width() - 45 - self.find('.line-l').outerWidth() - self.find('.menu-name').outerWidth());
+			});
+		}
+	</script>
+</body>
+</html>
