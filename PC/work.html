@@ -83,11 +83,13 @@
 				var self = $(this);
 				 if (event.type == "mouseover") {
 				 	self.width(self.width()).html(self.attr('ch')).css({
+				 		fontFamily: 'redocn',
 				 		backgroundColor: '#000',
 				 		color: '#fff'
 				 	});
 				 } else if (event.type == "mouseout") {
 				 	self.html(self.attr('en')).css({
+				 		fontFamily: 'dinlight',
 				 		backgroundColor: '#fff',
 				 		color: '#000'
 				 	});
