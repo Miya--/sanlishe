@@ -31,6 +31,7 @@
 	position: absolute;
 	z-index: 1;
 	width: 100%;
+	display: none;
 }
 
 ul.menu{
@@ -208,6 +209,7 @@ ul.menu li .line-r{
 	line-height: 80px;
 	font-size: 16px;
 	padding: 0 15px;
+	font-family: "dinlight";
 }
 .menu-work li.active a.first-work{
 	display: block;
@@ -226,6 +228,7 @@ ul.menu li .line-r{
 	height: 80px;
 	width: 45px;
 	text-align: center;
+	font-family: "dinlight";
 }
 .work-list li{
 }
@@ -236,6 +239,7 @@ ul.menu li .line-r{
 	height: 40px;
 	line-height: 40px;
 	text-align: center;
+	font-family: "dinlight";
 }
 
 .work-detail-wrap {
@@ -372,6 +376,7 @@ a.next{
 	width: 25%;
 	padding-bottom: 5px;
 	font-family: "dinlight";
+	line-height: 30px;
 }
 
 .work-detail-intro{
@@ -385,14 +390,15 @@ a.next{
 
 .det-inner{
 	margin-top: 50%;
+	height: 25px;
 }
 
 .det-inner .line-l{
-	width: 45%;
+	width: 53%;
 	height: 1px;
-	background:#3a3a3a;
+	background:#fff;
 	float: left;
-	margin-top: 10px;
+	margin-top: 12px;
 }
 .det-inner .detail-tit{
 	float: left;
@@ -401,23 +407,24 @@ a.next{
 	font-weight: normal;
 	font-size: 16px;
 	padding: 0 20px;
-	height: 20px;
-	line-height: 20px;
+	height: 25px;
+	line-height: 25px;
+	font-family: "dinlight";
 }
 .det-inner .detail-tit p.cont{
     position: absolute;
     font-size: 14px;
-    width: 12%;
+    width: 10%;
     padding-left: 20px;
     margin-top: 10px;
-    text-align: justify;
+    line-height: 16px;
 }
 .det-inner .line-r{
 	width: 38%;
 	height: 1px;
-	background:#3a3a3a;
+	background:#fff;
 	float: right;
-	margin-top: 10px;
+	margin-top: 12px;
 }
 
 .team-inner{
@@ -445,9 +452,9 @@ a.next{
 .team-inner .detail-tit p.cont{
     position: absolute;
     font-size: 14px;
-    width: 12%;
+    width: 10%;
     margin-top: 10px;
-    margin-left:20px;
+    margin-left: 10px;
     line-height:22px;
     text-align: justify;
     font-family: "redocn";

@@ -56,18 +56,18 @@
 	<script type="text/javascript" src="js/lib/jquery.js"></script>
 	<script type="text/javascript">
 		$(function () {
-			$('#nav').on('mouseover mouseout', 'a[class!="active"]', function (event) {
+			$('#nav').on('mouseover mouseout', 'a', function (event) {
 				var self = $(this);
 				 if (event.type == "mouseover") {
 				 	self.width(self.width()).html(self.attr('ch')).css({
-				 		fontFamily: 'redocn',
+				 		fontFamily: '"redocn"',
 				 		backgroundColor: '#000',
 				 		color: '#fff'
 				 	});
 				 } else if (event.type == "mouseout") {
 				 	self.html(self.attr('en')).css({
-				 		fontFamily: 'dinlight',
-				 		backgroundColor: '#fff',
+				 		fontFamily: '"dinlight"',
+				 		background: 'none',
 				 		color: '#000'
 				 	});
 				 }

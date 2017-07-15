@@ -19,13 +19,6 @@
 	<div class="menu-wrap" id="wrap_menu">
 		<ul class="menu" id="menu">
 			<li>
-				<a href="home.html">
-					<span class="line-l"></span>
-					<span class="menu-name">HOME</span>
-					<span class="line-r"></span>
-				</a>
-			</li>
-			<li>
 				<a href="work.html">
 					<span class="line-l"></span>
 					<span class="menu-name">WORK</span>
@@ -77,7 +70,7 @@
 			$('#wrap_menu').css({
 				'height' : $(window).height() - $('#logo').outerHeight(true),
 				'top' : $('#logo').outerHeight(true)
-			});
+			}).show();
 
 			$('#menu li').each(function () {
 				var self = $(this);
@@ -98,7 +91,7 @@
 			$('#wrap_menu').css({
 				'height' : $(window).height() - $('#logo').outerHeight(true),
 				'top' : $('#logo').outerHeight(true)
-			});
+			}).show();
 
 			$('#menu li').each(function () {
 				var self = $(this);

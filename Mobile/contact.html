@@ -16,7 +16,7 @@
 </head>
 <body>
 	<!-- 导航  -->
-	<h2 class="cur-nav">CONTACT</h2>
+	<a href="home.html" class="cur-nav"><i class="back"></i>CONTACT</a>
 
 	<a href="javascript:void(0)" id="showMenu" class="menu-icon"></a>
 
@@ -55,7 +55,7 @@
 					<h4>GET IN TOUCH</h4>
 					<p>Room 6111,Xicheng Plaza,151 Hanzhoung Avenue,Jianye District,Jiangsu,Nanjing</p>
 					<p>TEL:025-86503410</p>
-					<p>E-MAIL:136854201@QQ.COM</p>
+					<p>E-MAIL:<br>136854201@QQ.COM</p>
 				</div>
 				
 			</div>
@@ -73,7 +73,13 @@
 			});
 		});
 		function init () {
-			$('#inner_contact').find('.line-r').width($('#inner_contact').width() - $('#inner_contact').find('.line-l').width() - $('#inner_contact').find('.detail-tit').outerWidth(true) - 1);
+			window.setTimeout(function () {
+				$('#inner_contact').find('.line-r').width($(window).width() * 0.34 - 
+				$(window).width() * 0.34 * 0.2 - 
+				$('#inner_contact').find('.detail-tit').outerWidth(true) - 1);
+			}, 5);
+			
+
 			$('#line_contact').css('margin-top', $('#inner_contact').offset().top + 10 + 'px');
 			$('#wrap_contact_detail').css('margin-left', '-' + $('#wrap_contact_detail').outerWidth(true)/2 + 'px');
 		}

@@ -19,7 +19,7 @@
 	top: 0;
 	left: 0;
 	z-index: 2;
-	padding: 30px;
+	padding: 23px;
 }
 
 .logo img{
@@ -31,69 +31,81 @@
 	position: absolute;
 	z-index: 1;
 	width: 100%;
+	display: none;
 }
 
-h2.cur-nav{
+a.cur-nav{
+	display: block;
 	position: absolute;
-	top: 30px;
-	left: 30px;
+	top: 20px;
 	font-weight: normal;
 	font-family: "dinlight";
 	color: #000;
 	z-index: 2;
-	font-size: 1rem;
+	font-size: .8rem;
+	width: 34%;
+	text-align: center;
+	line-height: 20px;
+}
+a.cur-nav i{
+	display: inline-block;
+	width: 1em;
+	height: 20px;
+	background: url(../images/return.png) no-repeat center center;
+	background-size: 1em;
+	vertical-align: top;
+	margin-right: 5px;
 }
 
 a.menu-icon{
 	display: block;
 	position: absolute;
-	right: 30px;
-	top: 30px;
+	right: 20px;
+	top: 15px;
 	z-index: 2;
 	width: 30px;
 	height: 30px;
 	background: url(../images/list.png) no-repeat center center;
-	background-size: 25px;
+	background-size: 15px;
 }
 
 a.menu-icon-black{
 	display: block;
 	position: absolute;
 	right: 30px;
-	top: 30px;
+	top: 10px;
 	z-index: 2;
 	width: 30px;
 	height: 30px;
 	background: url(../images/list1.png) no-repeat center center;
-	background-size: 25px;
+	background-size: 1em;
 }
 
 ul.menu{
 	position: absolute;
-	left: 30px;
-	top: 50%;
-	margin-top: -200px;
+	left: 23px;
+	top: 0;
+	margin-top: 0;
 	z-index: 2;
 	width: 100%;
 }
 
 ul.menu li{
-	margin-bottom: 70px;
 }
 
 ul.menu li a{
 	display: block;
 	overflow: hidden;
-	height: 60px;
+	height: 100px;
 }
 
 ul.menu li .line-l{
 	display: block;
 	float: left;
-	height: 2px;
+	height: 1px;
 	width: 20px;
 	background:#fff;
-	margin-top: 28px;
+	margin-top: 48px;
 }
 
 ul.menu li .line-l.active{
@@ -107,7 +119,7 @@ ul.menu li .menu-name{
 	color: #fff;
 	font-size: 12px;
 	font-weight: normal;
-	line-height: 60px;
+	line-height: 100px;
 	margin-left: 5px;
 	margin-right: 5px;
 	display: block;
@@ -139,7 +151,7 @@ ul.menu li .line-r{
 	text-align: center;
 	height: 25px;
 	line-height: 25px;
-	padding: 8px 0;
+	padding: 4px 0;
 }
 
 .nav a.active{
@@ -168,7 +180,7 @@ ul.menu li .line-r{
 
 .menu-work{
 	position: absolute;
-	top: 20%;
+	top: 24%;
 	left: 0;
 	z-index: 2;
 	width: 100%;
@@ -210,7 +222,7 @@ ul.menu li .line-r{
 .menu-work li .work-list{
 	display: none;
 	position: absolute;
-	top: 80%;
+	top: 132%;
 	left: 34%;
 	z-index: 2;
 	width: 66%;
@@ -222,30 +234,30 @@ ul.menu li .line-r{
 .menu-work .line-c-l{
 	height: 1px;
 	background: #000;
-	margin-top: 15%;
+	margin-top: 8%;
 }
 
 .menu-work .line-l{
 	width: 15%;
 	height: 1px;
 	background: #000;
-	margin-top: 15%;
+	margin-top: 8%;
 }
 
 .menu-work .line-c-r{
 	width: 33%;
 	height: 1px;
 	background: #3a3a3a;
-	margin-top: 15%;
+	margin-top: 8%;
 }
 .menu-work li a.first-work{
 	display: none;
 	float: left;
 	color: #fff;
-	margin-top: 10%;
-	line-height: 40px;
-	font-size: 1rem;
-	padding: 0 20px;
+	margin-top: 6%;
+	line-height: 16px;
+	font-size: .6rem;
+	padding: 0 5px;
 	font-family: "dinlight";
 }
 .menu-work li.active a.first-work{
@@ -255,28 +267,28 @@ ul.menu li .line-r{
 .menu-work .year-r{
 	height: 1px;
 	background: #3a3a3a;
-	margin-top: 15%;
+	margin-top: 8%;
 }
 
 .menu-work .year-name{
 	color: #000;
-	font-size: 1rem;
-	line-height: 80px;
-	height: 80px;
+	font-size: .6rem;
+	line-height: 16px;
+	/* height: 80px; */
 	text-align: center;
-	width: 15%;
-	margin-top: 5%;
+	width: 12%;
+	margin-top: 6%;
 }
 
 .work-list a{
 	display: block;
 	color: #fff;
-	font-size: 1rem;
-	height: 40px;
-	line-height: 40px;
+	font-size: .6rem;
+	line-height: 16px;
 	text-align: center;
 	font-weight: normal;
 	font-family: "dinlight";
+	padding: 6% 0;
 }
 
 .work-detail-wrap {
@@ -407,7 +419,7 @@ a.next{
 }
 
 .intro-wrap .work-detail-tit{
-	font-size: 1rem;
+	font-size: .6rem;
 	font-weight: normal;
 	border-bottom: 1px solid #000;
 	width: 40%;
@@ -417,11 +429,10 @@ a.next{
 
 .work-detail-intro{
 	margin-top: 5px;
-	font-size: 0.8rem;
+	font-size: 0.6rem;
 	font-weight: normal;
 	width: 50%;
 	font-family: "dinlight";
-	text-align: justify;
 }
 
 .det-inner{
@@ -440,7 +451,7 @@ a.next{
 }
 .det-inner .detail-tit h3{
 	font-weight: normal;
-	font-size: 1rem;
+	font-size: .6rem;
 	padding: 0 5px;
 	height: 20px;
 	line-height: 20px;
@@ -448,14 +459,13 @@ a.next{
 }
 .det-inner .detail-tit p.cont{
     position: absolute;
-    font-size: .8rem;
+    font-size: .4rem;
     width: 75%;
-    padding-left: 20px;
-    margin-top: 10px;
+    padding-left: 5px;
+    margin-top: 5px;
     color: #fff;
     font-family: "dinlight";
-    line-height: 22px;
-    text-align: justify;
+    line-height: 14px;
 }
 .det-inner .line-r{
 	width: 38%;
@@ -551,16 +561,15 @@ ul.member li .detail .detail-tit{
 }
 ul.member li .detail .detail-tit .tit{
 	font-weight: normal;
-	font-size: 1rem;
+	font-size: .7rem;
 	padding: 0 5px;
-	height: 20px;
-	line-height: 20px;
+	height: 16px;
+	line-height: 16px;
 	font-family: "dinlight";
 }
 ul.member li .detail .detail-tit .cont{
 	position: absolute;
-	font-size: .8rem;
-	margin-top: 2px;
+	font-size: .6rem;
 	margin-left: 5px;
 	line-height: 16px;
 	text-align: justify;
@@ -600,7 +609,7 @@ ul.member li.active .mask{
 }
 
 .contact-inner .line-l{
-	width: 15%;
+	width: 20%;
 	height: 1px;
 	background:#3a3a3a;
 	float: left;
@@ -611,7 +620,7 @@ ul.member li.active .mask{
 }
 .contact-inner .detail-tit h3{
 	font-weight: normal;
-	font-size: .8rem;
+	font-size: .6rem;
 	padding: 0 5px;
 	height: 20px;
 	line-height: 20px;
@@ -638,7 +647,7 @@ ul.member li.active .mask{
 .contact-detail-wrap{
 	position: absolute;
 	z-index: 2;
-	top: 20%;
+	top: 24%;
 	left: 50%;
 	width: 40%;
 	line-height: 20px;
@@ -659,16 +668,16 @@ ul.member li.active .mask{
 	margin-bottom: 10px;
 }
 .contact-detail-wrap h4{
-	font-size: 1rem;
-	margin-bottom: 10px;
+	font-size: .6rem;
+	margin-bottom: 5px;
 	font-family: "dinlight";
 }
 .contact-detail-wrap p{
-	font-size: .8rem;
+	font-size: .4rem;
 	margin-top: 5px;
 	margin-bottom: 10px;
 	font-family: "dinlight";
-	line-height: 20px;
+	line-height: 14px;
 }
 .contact-detail-wrap .txt-wrap{
 	padding: 0 6%;
@@ -685,23 +694,23 @@ ul.member li.active .mask{
 	margin-right: 5px;
 }
 a.weibo{
-	width: 25px;
-	height: 25px;
+	width: 1.2em;
+	height: 1.2em;
 	background: url(../images/weibo.png) no-repeat center center;
-	background-size: 25px;
+	background-size: 1em;
 }
 a.qq{
-	width: 25px;
-	height: 25px;
+	width: 1.2em;
+	height: 1.2em;
 	background: url(../images/qq.png) no-repeat center center;
-	background-size: 25px;
+	background-size: 1em;
 }
 
 a.wechat{
-	width: 25px;
-	height: 25px;
+	width: 1.2em;
+	height: 1.2em;
 	background: url(../images/wechat.png) no-repeat center center;
-	background-size: 25px;
+	background-size: 1em;
 }
 
 .bottom-txt{
@@ -776,8 +785,8 @@ a.wechat{
 .islider-dot {
     position: relative;
     display: inline-block;
-    width: 26px;
-    height: 4px;
+    width: 15px;
+    height: 2px;
     margin-right: 8px;
     border: 1px solid #fff;
 }

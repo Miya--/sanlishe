@@ -17,7 +17,7 @@
 </head>
 <body>
 	<!-- 导航  -->
-	<h2 class="cur-nav">WORK</h2>
+	<a href="home.html" class="cur-nav"><i class="back"></i>WORK</a>
 
 	<a href="javascript:void(0)" id="showMenu" class="menu-icon"></a>
 
@@ -108,10 +108,12 @@
 				self.width(self.parent('li').width() * 0.34 - self.siblings('.line-l').width() - self.siblings('.year-name').width());
 			});
 
-			$('.first-work').each(function () {
-				var self = $(this);
-				self.siblings('.line-c-r, .year-r').width(($(window).width() * 0.66 - self.outerWidth() - 1) / 2);
-			});
+			window.setTimeout(function () {
+				$('.first-work').each(function () {
+					var self = $(this);
+					self.siblings('.line-c-r, .year-r').width(($('.page-r').outerWidth(true) - self.outerWidth(true)) / 2 - 1);
+				});
+			}, 5);
 			
 		}
 	</script>
