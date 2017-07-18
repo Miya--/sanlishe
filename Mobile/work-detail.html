@@ -16,7 +16,7 @@
 </head>
 <body>
 	<!-- 导航  -->
-	<a href="work.html" class="cur-nav"><i class="back"></i>WORK</a>
+	<a href="work.html" class="cur-nav">WORK</a>
 
 	<a href="javascript:void(0)" id="showMenu" class="menu-icon-black"></a>
 
@@ -40,7 +40,7 @@
 		
 		<div class="intro-wrap">
 			<h3 class="work-detail-tit">PLUTO</h3>
-			<p id="cont_tit" class="work-detail-intro" ch="他走到布鲁托身边，坐在他的腿上。">
+			<p id="cont_tit" class="work-detail-intro" flag="en" ch="他走到布鲁托身边，坐在他的腿上。">
 				Bob got off Pluto's lap, he grabbed Pluto's round black plastic nose and
 			</p>
 		</div>
@@ -51,7 +51,7 @@
 			<span class="line-l"></span>
 			<div class="detail-tit">
 				<h3 id="tit">PLUTO</h3>
-				<p class="cont" id="detail_cont" ch="他走到布鲁托身边，坐在他的腿上。伊娃说：“说奶酪！”Billy Bob和布鲁托都说了咒语，然后，Billy Bob从布鲁托的大腿上走了下来。他抓住布鲁托的圆形的黑色塑料鼻子，扯掉布鲁托的客户。冥王星喊道：“哎哟！”Billy Bob不停地跑，布鲁托开始追他。">
+				<p class="cont" id="detail_cont" flag="en" ch="他走到布鲁托身边，坐在他的腿上。伊娃说：“说奶酪！”Billy Bob和布鲁托都说了咒语，然后，Billy Bob从布鲁托的大腿上走了下来。他抓住布鲁托的圆形的黑色塑料鼻子，扯掉布鲁托的客户。冥王星喊道：“哎哟！”Billy Bob不停地跑，布鲁托开始追他。">
 					He went over to Pluto and sat on his lap. Eva said,"Say Cheese!" and both Billy Bob and Pluto said the magic word.Then, as Billy Bob got off Pluto's lap. he grabbed Pluto's round black plastic nose and ripped it off Pluto's custome. Pluto yelled "Ouch!" (even though it didn't hurt).Billy Bob started running, and Pluto started Chasing him.
 				</p>
 			</div>
@@ -68,7 +68,7 @@
 	<script type="text/javascript">
 		$(function () {
 			$(window).resize(function () {
-				 $('#inner_det').find('.line-l, .line-r').width(($(window).width() * 0.3 - $('#inner_det').find('#tit').outerWidth()) / 2 - 1);
+				 $('#inner_det').find('.line-r').width($('#inner_det').outerWidth(true) - $('#inner_det').find('.line-l').outerWidth(true) - $('#inner_det').find('#tit').outerWidth(true) - 1);
 			});
 			
 			// slider
@@ -94,21 +94,47 @@
 		        animateTime: 800, // ms
 		        plugins: [['dot', {locate :'relative'}]]
 		    });
-
-	        $('#inner_det').find('.line-r').width($(window).width() - $('#inner_det').find('.line-l').width() - $('#inner_det').find('#tit').outerWidth() - 1);
+			
+			window.setTimeout(function () {
+				$('#inner_det').find('.line-r').width($('#inner_det').outerWidth(true) - $('#inner_det').find('.line-l').outerWidth(true) - $('#inner_det').find('#tit').outerWidth(true) - 1);
+			}, 200);
 
 	        var en = $('#detail_cont').html();
-	        $('#detail_cont').hover(function () {
-	        	$(this).css('opacity', '0').html($(this).attr('ch')).css('font-family', '"redocn"').animate({opacity: 1}, 300);
-	        }, function () {
-	        	$(this).css('opacity', '0').html(en).css('font-family', '"dinlight"').animate({opacity: 1}, 300);
+	        $('#detail_cont').click(function () {
+				if ($(this).attr('flag') === 'ch') {
+					$(this).css('opacity', '0').html(en).css({
+						'font-family': '"dinlight"',
+						'line-height': '16px',
+						'text-align': 'left'
+					}).animate({opacity: 1}, 300);
+					$(this).attr('flag', 'en');
+				} else {
+					$(this).css('opacity', '0').html($(this).attr('ch')).css({
+						'font-family': '"redocn"',
+						'line-height': '24px',
+						'text-align': 'justify'
+					}).animate({opacity: 1}, 300);
+					$(this).attr('flag', 'ch');
+				}
 	        });
 
 	        var en_tit = $('#cont_tit').html();
-	        $('#cont_tit').hover(function () {
-	        	$(this).css('opacity', '0').html($(this).attr('ch')).css('font-family', '"redocn"').animate({opacity: 1}, 300);
-	        }, function () {
-	        	$(this).css('opacity', '0').html(en_tit).css('font-family', '"dinlight"').animate({opacity: 1}, 300);
+	        $('#cont_tit').click(function () {
+				if ($(this).attr('flag') === 'ch') {
+					$(this).css('opacity', '0').html(en_tit).css({
+						'font-family': '"dinlight"',
+						'line-height': '16px',
+						'text-align': 'left'
+					}).animate({opacity: 1}, 300);
+					$(this).attr('flag', 'en');
+				} else {
+					$(this).css('opacity', '0').html($(this).attr('ch')).css({
+						'font-family': '"redocn"',
+						'line-height': '24px',
+						'text-align': 'justify'
+					}).animate({opacity: 1}, 300);
+					$(this).attr('flag', 'ch');
+				}
 	        });
 		});
 	</script>

@@ -17,7 +17,7 @@
 </head>
 <body>
 	<!-- 导航  -->
-	<a href="home.html" class="cur-nav"><i class="back"></i>WORK</a>
+	<a href="home.html" class="cur-nav">WORK</a>
 
 	<a href="javascript:void(0)" id="showMenu" class="menu-icon"></a>
 
@@ -42,6 +42,8 @@
 			<span class="line-c-l"></span>
 			<span class="line-c-r"></span>
 			<a class="first-work" href="work-detail.html">PLUTO</a>
+			<span class="year-r"></span>
+			<br class="clear">
 			<ul class="work-list">
 				<li><a href="work-detail.html">LIMBO</a></li>
 				<li><a href="work-detail.html">M.A</a></li>
@@ -50,8 +52,6 @@
 				<li><a href="work-detail.html">LIMBO</a></li>
 				<li><a href="work-detail.html">M.A</a></li>
 			</ul>
-			<span class="year-r"></span>
-			<br class="clear">
 		</li>
 		<li>
 			<span class="line-l"></span>
@@ -59,12 +59,12 @@
 			<span class="line-c-l"></span>
 			<span class="line-c-r"></span>
 			<a class="first-work" href="work-detail.html">BC</a>
+			<span class="year-r"></span>
+			<br class="clear">
 			<ul class="work-list">
 				<li><a href="work-detail.html">MR TOKIO</a></li>
 				<li><a href="work-detail.html">MOUSLA</a></li>
 			</ul>
-			<span class="year-r"></span>
-			<br class="clear">
 		</li>
 		<li>
 			<span class="line-l"></span>
@@ -72,13 +72,13 @@
 			<span class="line-c-l"></span>
 			<span class="line-c-r"></span>
 			<a class="first-work" href="work-detail.html">HASKI</a>
+			<span class="year-r"></span>
+			<br class="clear">
 			<ul class="work-list">
 				<li><a href="work-detail.html">HASKI</a></li>
 				<li><a href="work-detail.html">POPY</a></li>
 				<li><a href="work-detail.html">LABL</a></li>
 			</ul>
-			<span class="year-r"></span>
-			<br class="clear">
 		</li> 
 	</ul>
 
@@ -108,12 +108,12 @@
 				self.width(self.parent('li').width() * 0.34 - self.siblings('.line-l').width() - self.siblings('.year-name').width());
 			});
 
+			
+			var firWork = $('#menu_work li').eq(0);
 			window.setTimeout(function () {
-				$('.first-work').each(function () {
-					var self = $(this);
-					self.siblings('.line-c-r, .year-r').width(($('.page-r').outerWidth(true) - self.outerWidth(true)) / 2 - 1);
-				});
-			}, 5);
+				firWork.find('.line-c-r, .year-r').width(($('#menu_work').outerWidth(true) * 0.66 - firWork.find('a.first-work').outerWidth(true)) / 2 -1);
+			}, 200);
+			
 			
 		}
 	</script>
