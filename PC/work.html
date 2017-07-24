@@ -99,7 +99,7 @@
 			$('#menu_work li').hover(function () {
 				var self = $(this);
 
-				self.find('.line-c-r, .year-r').width(($(window).width() * 0.7 - self.find('a.first-work').outerWidth() - 1) / 2);
+				/*self.find('.line-c-r, .year-r').width(($(window).width() * 0.7 - self.find('a.first-work').outerWidth(true)) / 2);*/
 
 				self.addClass('active').siblings('li').removeClass('active');
 			});
