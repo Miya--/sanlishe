@@ -19,12 +19,12 @@
 	top: 0;
 	left: 0;
 	z-index: 2;
-	padding: 23px;
+	padding: 28px;
 }
 
 .logo img{
 	display: block;
-	width: 102px;
+	width: 120px;
 }
 
 .menu-wrap{
@@ -37,15 +37,15 @@
 a.cur-nav{
 	display: block;
 	position: absolute;
-	top: 20px;
+	top: 30px;
 	font-weight: normal;
 	font-family: "dinlight";
 	color: #000;
 	z-index: 2;
-	font-size: .8rem;
+	font-size: .9rem;
 	text-align: center;
 	line-height: 20px;
-	left: 20px;
+	left: 30px;
 }
 a.cur-nav i{
 	display: inline-block;
@@ -73,7 +73,7 @@ a.menu-icon-black{
 	display: block;
 	position: absolute;
 	right: 15px;
-	top: 10px;
+	top: 22px;
 	z-index: 2;
 	width: 30px;
 	height: 30px;
@@ -96,7 +96,6 @@ ul.menu li{
 ul.menu li a{
 	display: block;
 	overflow: hidden;
-	height: 100px;
 }
 
 ul.menu li .line-l{
@@ -119,7 +118,7 @@ ul.menu li .menu-name{
 	color: #fff;
 	font-size: .6rem;
 	font-weight: normal;
-	line-height: 100px;
+	line-height: 120px;
 	margin-left: 5px;
 	margin-right: 5px;
 	display: block;
@@ -192,6 +191,7 @@ ul.menu li .line-r{
 	width: 100%;
 	clear: both;
 	cursor: pointer;
+	margin-bottom: 20px;
 }
 
 .menu-work .year-name,
@@ -221,7 +221,7 @@ ul.menu li .line-r{
 .menu-work li .work-list{
 	display: none;
 	position: absolute;
-	top: 132%;
+	top: 160%;
 	left: 34%;
 	z-index: 2;
 	width: 66%;
@@ -232,31 +232,31 @@ ul.menu li .line-r{
 
 .menu-work .line-c-l{
 	height: 1px;
-	background: #000;
-	margin-top: 8%;
+	background: #3a3a3a;
+	margin-top: 7%;
 }
 
 .menu-work .line-l{
 	width: 15%;
 	height: 1px;
-	background: #000;
-	margin-top: 8%;
+	background: #3a3a3a;
+	margin-top: 7%;
 }
 
 .menu-work .line-c-r{
 	
 	height: 1px;
 	background: #3a3a3a;
-	margin-top: 8%;
+	margin-top: 7%;
 }
 .menu-work li a.first-work{
 	display: none;
 	float: left;
 	color: #fff;
-	margin-top: 6%;
+	margin-top: 5%;
 	line-height: 16px;
 	font-size: 1rem;
-	padding: 0 8px;
+	padding: 0 10px;
 	font-family: "dinlight";
 	display:none;
 }
@@ -267,17 +267,16 @@ ul.menu li .line-r{
 .menu-work .year-r{
 	height: 1px;
 	background: #3a3a3a;
-	margin-top: 8%;
+	margin-top: 7%;
 }
 
 .menu-work .year-name{
 	color: #000;
 	font-size: .9rem;
 	line-height: 16px;
-	/* height: 80px; */
 	text-align: center;
 	width: 12%;
-	margin-top: 6%;
+	margin-top: 5%;
 }
 
 .work-list a{
@@ -288,7 +287,7 @@ ul.menu li .line-r{
 	text-align: center;
 	font-weight: normal;
 	font-family: "dinlight";
-	padding: 6% 0;
+	padding: 5% 0;
 }
 
 .work-detail-wrap {
@@ -417,10 +416,10 @@ a.next{
 }
 
 .intro-wrap .work-detail-tit{
-	font-size: .6rem;
+	font-size: .5rem;
 	font-weight: normal;
 	border-bottom: 1px solid #000;
-	width: 40%;
+	width: 25%;
 	padding-bottom: 5px;
 	font-family: "dinlight";
 }
@@ -429,12 +428,12 @@ a.next{
 	margin-top: 5px;
 	font-size: 0.6rem;
 	font-weight: normal;
-	width: 50%;
+	width: 40%;
 	font-family: "dinlight";
 }
 
 .det-inner{
-	margin-top: 5%;
+	margin-top: 8%;
 }
 
 .det-inner .line-l{
@@ -449,17 +448,17 @@ a.next{
 }
 .det-inner .detail-tit h3{
 	font-weight: normal;
-	font-size: .8rem;
-	padding: 0 5px;
+	font-size: .7rem;
+	padding: 0 10px;
 	height: 20px;
 	line-height: 20px;
 	color: #fff;
 }
 .det-inner .detail-tit p.cont{
     position: absolute;
-    font-size: .8rem;
+    font-size: .7rem;
     width: 75%;
-    padding-left: 5px;
+    padding-left: 10px;
     margin-top: 5px;
     color: #fff;
     font-family: "dinlight";
@@ -514,15 +513,14 @@ a.next{
 }
 
 ul.member{
-	width: 80%;
-	margin: 24% auto 0;
-	height: 40%;
+	margin: 20% 20px 0;
+	height: 45%;
 	overflow: hidden;
 	position: relative;
 	z-index: 1;
 }
 ul.member li{
-    float: left; 
+    float: left;
     height: 50%;
     position: relative;
     z-index: 1;
@@ -635,7 +633,7 @@ ul.member li.active .mask{
 .contact-line{
 	margin-top: 22%;
 	height: 1px;
-	background:#3a3a3a;
+	background: #807f7f;
 	width: 100%;
 }
 .contact-detail-wrap{
@@ -645,9 +643,9 @@ ul.member li.active .mask{
 .contact-detail-wrap{
 	position: absolute;
 	z-index: 2;
-	top: 24%;
-	left: 50%;
-	width: 40%;
+	top: 20%;
+	left: 14%;
+	width: 55%;
 	line-height: 20px;
 	font-weight: normal;
 }
@@ -663,11 +661,11 @@ ul.member li.active .mask{
 .qrcode-wrap img{
 	display: block;
 	width: 100%;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 }
 .contact-detail-wrap h4{
 	font-size: .6rem;
-	margin-bottom: 5px;
+	margin-bottom: 15px;
 	font-family: "dinlight";
 }
 .contact-detail-wrap p{
@@ -675,7 +673,7 @@ ul.member li.active .mask{
 	margin-top: 5px;
 	margin-bottom: 10px;
 	font-family: "dinlight";
-	line-height: 14px;
+	line-height: 18px;
 }
 .contact-detail-wrap .txt-wrap{
 	padding: 0 6%;
@@ -684,7 +682,7 @@ ul.member li.active .mask{
 .outlink{
 	overflow: hidden;
 	padding-left: 6%;
-	margin: 20px 0 10px;
+	margin: 30px 0 20px;
 }
 .outlink a{
 	display: block;
@@ -770,7 +768,7 @@ a.wechat{
 }
 .islider-dot-wrap {
     width: 80%;
-    height: 14%;
+    height: 12%;
     margin: 0 auto;
     position: absolute;
     padding: 0;
