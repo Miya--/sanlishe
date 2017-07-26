@@ -44,12 +44,10 @@ ul.menu{
 }
 
 ul.menu li{
-	margin-bottom: 40px;
 }
 
 ul.menu li a{
 	display: block;
-	overflow: hidden;
 	height: 60px;
 }
 
@@ -59,12 +57,10 @@ ul.menu li .line-l{
 	height: 5px;
 	width: 20px;
 	background:#fff;
-	margin-top: 28px;
 }
 
 ul.menu li .line-l.active{
 	height:2px;
-	margin-top: 28px;
 }
 
 ul.menu li .menu-name{
@@ -73,7 +69,7 @@ ul.menu li .menu-name{
 	color: #fff;
 	font-size: 12px;
 	font-weight: normal;
-	line-height: 60px;
+	line-height: 1px;
 	margin-left: 12px;
 	margin-right: 12px;
 	display: none;
@@ -83,7 +79,6 @@ ul.menu li .line-r{
 	float: left;
 	height: 2px;
 	background: #fff;
-	margin-top: 28px;
 	display: none;
 }
 
@@ -120,13 +115,13 @@ ul.menu li .line-r{
 }
 
 .work-wrap .page-l{
-	width:30%;
+	width: 25%;
 	height: 100%;
 	background: #fff;
 }
 
 .work-wrap .page-r{
-	width:70%;
+	width: 75%;
 	height: 100%;
 }
 
@@ -174,9 +169,9 @@ ul.menu li .line-r{
 	display: none;
 	position: absolute;
 	top: 60px;
-	left: 30%;
+	left: 25%;
 	z-index: 2;
-	width: 70%;
+	width: 75%;
 }
 .menu-work li.active .work-list{
 	display: block;
@@ -189,7 +184,7 @@ ul.menu li .line-r{
 }
 
 .menu-work .line-l{
-	width: 24%;
+	width: 20%;
 	height: 1px;
 	background: #000;
 	margin-top: 30px;
@@ -380,7 +375,7 @@ a.next{
 
 .work-detail-intro{
 	margin-top: 10px;
-	font-size: 13px;
+	font-size: 14px;
 	font-weight: normal;
 	width: 23%;
 	font-family: "dinlight";
@@ -413,11 +408,11 @@ a.next{
 }
 .det-inner .detail-tit p.cont{
     position: absolute;
-    font-size: 13px;
+    font-size: 14px;
     width: 9%;
     padding-left: 28px;
     margin-top: 6px;
-    line-height: 16px;
+    line-height: 18px;
 }
 .det-inner .line-r{
 	width: 38%;
@@ -428,7 +423,7 @@ a.next{
 }
 
 .team-inner{
-	margin-top: 50%;
+	margin-top: 65%;
 }
 
 .team-inner .line-l{
@@ -498,13 +493,14 @@ ul.member li .detail .line-l{
 	height:1px;
 	background: #fff;
 	float: left;
-	margin-top: 8px;
+	margin-top: 10px;
+	width: 15%;
 }
 ul.member li .detail .line-r{
 	height:1px;
 	background: #fff;
 	float: right;
-	margin-top: 8px;
+	margin-top: 10px;
 }
 ul.member li .detail .detail-tit{
 	float: left;

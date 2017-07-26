@@ -137,7 +137,7 @@
 				self.hover(function () {
 					self.addClass('active');
 					self.find('a').attr('style', 'background:url("'+self.find('a').attr('otherimg')+'");background-size:cover;')
-					self.find('.line-l, .line-r').width((self.find('.detail').width() - self.find('.tit').outerWidth(true))/2 - 1);
+					self.find('.line-r').width(self.find('.detail').width() - self.find('.tit').outerWidth(true) - self.find('.line-l').outerWidth(true) - 1);
 				}, function () {
 					self.find('a').attr('style', saveImg);
 					self.removeClass('active');
@@ -160,7 +160,7 @@
 				} else {
 					$(this).css('opacity', '0').html(ch).css({
 						'font-family': '"redocn"',
-						'line-height': '24px',
+						'line-height': '20px',
 						'text-align': 'justify'
 					}).animate({opacity: 1}, 300);
 					$(this).attr('flag', 'ch');

@@ -30,9 +30,9 @@
 	<div class="work-detail-wrap o-h">
 		<div class="slider" id="slider">
 			<div class="s-inner">
-		        <ul class="slide-list" id="iSlider-wrapper" style="height:100%">
+		        <div class="slide-list" id="iSlider-wrapper" style="height:100%">
 		            
-		        </ul>
+		        </div>
 	        	
 	        </div>
 	    </div>
@@ -64,7 +64,7 @@
 	<script type="text/javascript" src="js/lib/jquery.cycle.all.js"></script>
 	<script type="text/javascript" src="js/common.js"></script>
 	<script type="text/javascript" src="js/lib/iSlider.min.js"></script>
-	<script type="text/javascript" src="js/lib/iSlider.plugin.dot.min.js"></script>
+	<script type="text/javascript" src="js/lib/button.js"></script>
 	<script type="text/javascript">
 		$(function () {
 			$(window).resize(function () {
@@ -92,7 +92,7 @@
 		        isAutoplay: true,
 		        isOverspread: 1,
 		        animateTime: 800, // ms
-		        plugins: [['dot', {locate :'relative'}]]
+		        plugins: ['button']
 		    });
 			
 			window.setTimeout(function () {

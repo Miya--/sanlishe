@@ -37,7 +37,7 @@
 a.cur-nav{
 	display: block;
 	position: absolute;
-	top: 30px;
+	top: 20px;
 	font-weight: normal;
 	font-family: "dinlight";
 	color: #000;
@@ -45,7 +45,7 @@ a.cur-nav{
 	font-size: .9rem;
 	text-align: center;
 	line-height: 20px;
-	left: 30px;
+	left: 20px;
 }
 a.cur-nav i{
 	display: inline-block;
@@ -73,7 +73,7 @@ a.menu-icon-black{
 	display: block;
 	position: absolute;
 	right: 15px;
-	top: 22px;
+	top: 12px;
 	z-index: 2;
 	width: 30px;
 	height: 30px;
@@ -95,7 +95,6 @@ ul.menu li{
 
 ul.menu li a{
 	display: block;
-	overflow: hidden;
 }
 
 ul.menu li .line-l{
@@ -118,9 +117,6 @@ ul.menu li .menu-name{
 	color: #fff;
 	font-size: .6rem;
 	font-weight: normal;
-	line-height: 120px;
-	margin-left: 5px;
-	margin-right: 5px;
 	display: block;
 }
 
@@ -315,14 +311,12 @@ ul.menu li .line-r{
 .slider{
 	margin: 20% 20px 0;
     height: 35%;
-    overflow: hidden;
     position: relative;
     z-index: 1;
 }
 
 .s-inner{
 	height: 100%;
-	overflow: hidden;
 	position: relative;
 }
 
@@ -412,7 +406,7 @@ a.next{
 }
 
 .intro-wrap{
-	margin: 25px 20px 50px;
+	margin: 35px 20px 50px;
 }
 
 .intro-wrap .work-detail-tit{
@@ -437,7 +431,7 @@ a.next{
 }
 
 .det-inner .line-l{
-	width: 8%;
+	width: 10px;
 	height: 1px;
 	background: #fff;
 	float: left;
@@ -527,7 +521,7 @@ ul.member li{
 }
 ul.member li .detail{
 	width: 100%;
-	margin-top: 65%;
+	margin-top: 82%;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -544,13 +538,14 @@ ul.member li .detail .line-l{
 	height:1px;
 	background: #fff;
 	float: left;
-	margin-top: 8px;
+	margin-top: 7px;
+	width: 15%;
 }
 ul.member li .detail .line-r{
 	height:1px;
 	background: #fff;
 	float: right;
-	margin-top: 8px;
+	margin-top: 7px;
 }
 ul.member li .detail .detail-tit{
 	float: left;
@@ -565,7 +560,7 @@ ul.member li .detail .detail-tit .tit{
 }
 ul.member li .detail .detail-tit .cont{
 	position: absolute;
-	font-size: .6rem;
+	font-size: .4rem;
 	margin-left: 5px;
 	line-height: 16px;
 	text-align: justify;
@@ -605,11 +600,12 @@ ul.member li.active .mask{
 }
 
 .contact-inner .line-l{
-	width: 20%;
+	width: 10px;
 	height: 1px;
 	background:#3a3a3a;
 	float: left;
 	margin-top: 10px;
+	display: block;
 }
 .contact-inner .detail-tit{
 	float: left;
@@ -628,6 +624,7 @@ ul.member li.active .mask{
 	background:#3a3a3a;
 	float: right;
 	margin-top: 10px;
+	display: block;
 }
 
 .contact-line{
@@ -665,13 +662,13 @@ ul.member li.active .mask{
 }
 .contact-detail-wrap h4{
 	font-size: .6rem;
-	margin-bottom: 15px;
+	margin-bottom: 12px;
 	font-family: "dinlight";
 }
 .contact-detail-wrap p{
 	font-size: .6rem;
 	margin-top: 5px;
-	margin-bottom: 10px;
+	margin-bottom: 8px;
 	font-family: "dinlight";
 	line-height: 18px;
 }
@@ -682,7 +679,7 @@ ul.member li.active .mask{
 .outlink{
 	overflow: hidden;
 	padding-left: 6%;
-	margin: 30px 0 20px;
+	margin: 20px 0 10px;
 }
 .outlink a{
 	display: block;
@@ -766,29 +763,54 @@ a.wechat{
 .islider-sliding-focus {
     z-index: 1;
 }
-.islider-dot-wrap {
-    width: 80%;
-    height: 12%;
-    margin: 0 auto;
+/**
+ * ===========================
+ * iSlider.plugin.button
+ * ===========================
+ */
+.islider-btn-outer {
     position: absolute;
-    padding: 0;
+    width: 3em;
+    cursor: pointer;
+    bottom: -20px;
+    margin: auto 0;
+    display: block;
+}
+
+.islider-btn-outer.left {
     left: 0;
+}
+
+.islider-btn-outer.right {
     right: 0;
-    bottom: 0;
-    z-index: 2;
-    text-align: center;
 }
-.islider-dot {
-    position: relative;
+
+.islider-btn-inner {
+    font-size: 0.6rem;
+    color: #000;
+    font-family: "dinlight";
+}
+
+.islider-btn-outer.left > .islider-btn-inner span.icon{
+	display: inline-block;
+	width: 12px;
+	height: 8px;
+	margin-top: 3px;
+	background: url('../images/arrow-left.png') no-repeat;
+	background-size: auto 8px;
+	margin-right: 5px;
+}
+
+.islider-btn-outer.right > .islider-btn-inner span.icon{
     display: inline-block;
-    width: 15px;
-    height: 2px;
-    margin-right: 8px;
-    border: 1px solid #fff;
+    width: 12px;
+    height: 8px;
+    margin-top: 3px;
+    background: url(../images/arrow-right.png) no-repeat;
+    background-size: auto 8px;
+    margin-left: 5px;
 }
-.islider-dot.active {
-    background: #fff;
-}
+
 
 
 

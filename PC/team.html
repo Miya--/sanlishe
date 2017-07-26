@@ -119,7 +119,7 @@
 		$(function () {
 			$('ul#list_member li').css('width', 100/3 + '%');
 
-			$('#inner_team').find('.line-r').width($(window).width() * 0.3 - $('#inner_team').find('.line-l').outerWidth() - $('#tit').outerWidth() - 1);
+			$('#inner_team').find('.line-r').width($(window).width() * 0.25 - $('#inner_team').find('.line-l').outerWidth() - $('#tit').outerWidth() - 1);
 			
 			$('#nav').on('mouseover mouseout', 'a', function (event) {
 				var self = $(this);
@@ -144,7 +144,7 @@
 				self.hover(function () {
 					self.addClass('active');
 					self.find('a').attr('style', 'background:url("'+self.find('a').attr('otherimg')+'");background-size:cover;')
-					self.find('.line-l, .line-r').width((self.find('.detail').width() - self.find('.tit').outerWidth(true))/2 - 1);
+					self.find('.line-r').width(self.find('.detail').width() - self.find('.tit').outerWidth(true) - self.find('.line-l').outerWidth(true) - 1);
 				}, function () {
 					self.find('a').attr('style', saveImg);
 					self.removeClass('active');
@@ -152,7 +152,7 @@
 			});
 
 			$(window).resize(function () {
-				$('#inner_team').find('.line-r').width($(window).width() * 0.3 - $('#inner_team').find('.line-l').outerWidth() - $('#tit').outerWidth() - 1);
+				$('#inner_team').find('.line-r').width($(window).width() * 0.25 - $('#inner_team').find('.line-l').outerWidth() - $('#tit').outerWidth() - 1);
 			});
 
 			var ch = $('#intr').html();

@@ -69,10 +69,18 @@
 		});
 
 		function init () {
+			var height_single = ($(window).height() - $('#logo').outerHeight(true) - 28) / 4;
+			var height_li = ($(window).height() - $('#logo').outerHeight(true) - 28) / 3
+			$('#menu li a').css({
+				'height' : height_li * 0.7 + 'px',
+				'line-height' : '0px'
+			});
+
 			$('#wrap_menu').css({
-				'height' : '300px',
-				'top' : $('#logo').outerHeight(true) + ($(window).height() - $('#logo').outerHeight(true))/2,
-				'margin-top':  - (300 / 2 + 50) + 'px'
+				'height' : $(window).height() - $('#logo').outerHeight(true) - 28 + 'px',
+				'top' : $('#logo').outerHeight(true) - 28 + height_single + 'px',
+				'bottom' : $('#logo').outerHeight(true) - 28 + height_single + 'px',
+				'left' : 0
 			}).show();
 
 			$('#menu li').each(function () {
@@ -91,11 +99,19 @@
 		}
 
 		function resizeInit () {
-			$('#wrap_menu').css({
-				'height' : '360px',
-				'top' : $('#logo').outerHeight(true) + ($(window).height() - $('#logo').outerHeight(true))/2,
-				'margin-top':  - (300 / 2 + 50) + 'px'
+			var height_single = ($(window).height() - $('#logo').outerHeight(true) - 28) / 4;
+			var height_li = ($(window).height() - $('#logo').outerHeight(true) - 28) / 3
+			$('#menu li a').css({
+				'height' : height_li * 0.7 + 'px',
+				'line-height' : '0px'
 			});
+
+			$('#wrap_menu').css({
+				'height' : $(window).height() - $('#logo').outerHeight(true) - 28 + 'px',
+				'top' : $('#logo').outerHeight(true) - 28 + height_single + 'px',
+				'bottom' : $('#logo').outerHeight(true) - 28 + height_single + 'px',
+				'left' : 0
+			}).show();
 
 			$('#menu li').each(function () {
 				var self = $(this);

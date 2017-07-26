@@ -99,20 +99,18 @@
 			$('#menu_work li').hover(function () {
 				var self = $(this);
 
-				/*self.find('.line-c-r, .year-r').width(($(window).width() * 0.7 - self.find('a.first-work').outerWidth(true)) / 2);*/
-
 				self.addClass('active').siblings('li').removeClass('active');
 			});
 		});
 		function init () {
 			$('.line-c-l').each(function () {
 				var self = $(this);
-				self.width(self.parent('li').width() * 0.3 - self.siblings('.line-l').width() - self.siblings('.year-name').width());
+				self.width(self.parent('li').width() * 0.25 - self.siblings('.line-l').width() - self.siblings('.year-name').width());
 			});
 
 			$('.first-work').each(function () {
 				var self = $(this);
-				self.siblings('.line-c-r, .year-r').width(($(window).width() * 0.7 - self.outerWidth(true)) / 2);
+				self.siblings('.line-c-r, .year-r').width(($(window).width() * 0.75 - self.outerWidth(true)) / 2);
 			});
 			
 		}
