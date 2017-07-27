@@ -508,10 +508,11 @@ a.next{
 
 ul.member{
 	margin: 20% 20px 0;
-	height: 45%;
-	overflow: hidden;
-	position: relative;
-	z-index: 1;
+    height: 45%;
+    overflow-x: hidden;
+    position: relative;
+    z-index: 1;
+    overflow-y: auto;
 }
 ul.member li{
     float: left;

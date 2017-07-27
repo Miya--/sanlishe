@@ -30,11 +30,13 @@
 			</div>
 		</div>
 
-		<div class="page-r f-l">
+		<div class="page-r f-l" style="background:#000">
 			<ul class="member" id="list_member">
 				<li>
-					<a href="javascript:void(0)" otherimg="images/avator/1.gif" style="background:url('images/avator/1.jpg');background-size:cover;">
+					<a class="default" href="javascript:void(0)" style="background:url('images/avator/a1.jpg');background-size:cover;">
 						<span class="mask"></span>
+					</a>
+					<a class="hover" href="javascript:void(0)" style="background:url('images/avator/a2.jpg');background-size:cover;display:none;">
 					</a>
 					<div class="detail">
 						<span class="line-l"></span>
@@ -46,8 +48,10 @@
 					</div>
 				</li>
 				<li>
-					<a href="javascript:void(0)" otherimg="images/avator/2.gif" style="background:url('images/avator/2.jpg');background-size:cover;">
+					<a class="default" href="javascript:void(0)" style="background:url('images/avator/b1.jpg');background-size:cover;">
 						<span class="mask"></span>
+					</a>
+					<a class="hover" href="javascript:void(0)" style="background:url('images/avator/b2.jpg');background-size:cover;display:none;">
 					</a>
 					<div class="detail">
 						<span class="line-l"></span>
@@ -59,8 +63,10 @@
 					</div>
 				</li>
 				<li>
-					<a href="javascript:void(0)" otherimg="images/avator/3.gif" style="background:url('images/avator/3.jpg');background-size:cover;">
+					<a class="default" href="javascript:void(0)" style="background:url('images/avator/c1.jpg');background-size:cover;">
 						<span class="mask"></span>
+					</a>
+					<a class="hover" href="javascript:void(0)" style="background:url('images/avator/c2.jpg');background-size:cover;display:none;">
 					</a>
 					<div class="detail">
 						<span class="line-l"></span>
@@ -72,8 +78,10 @@
 					</div>
 				</li>
 				<li>
-					<a href="javascript:void(0)" otherimg="images/avator/4.gif" style="background:url('images/avator/4.jpg');background-size:cover;">
+					<a class="default" href="javascript:void(0)" style="background:url('images/avator/d1.jpg');background-size:cover;">
 						<span class="mask"></span>
+					</a>
+					<a class="hover" href="javascript:void(0)" style="background:url('images/avator/d2.jpg');background-size:cover;display:none;">
 					</a>
 					<div class="detail">
 						<span class="line-l"></span>
@@ -85,8 +93,10 @@
 					</div>
 				</li>
 				<li>
-					<a href="javascript:void(0)" otherimg="images/avator/5.gif" style="background:url('images/avator/5.jpg');background-size:cover;">
+					<a class="default" href="javascript:void(0)" style="background:url('images/avator/e1.jpg');background-size:cover;">
 						<span class="mask"></span>
+					</a>
+					<a class="hover" href="javascript:void(0)" style="background:url('images/avator/e2.jpg');background-size:cover;display:none;">
 					</a>
 					<div class="detail">
 						<span class="line-l"></span>
@@ -98,8 +108,25 @@
 					</div>
 				</li>
 				<li>
-					<a href="javascript:void(0)" otherimg="images/avator/6.gif" style="background:url('images/avator/6.jpg');background-size:cover;">
+					<a class="default" href="javascript:void(0)" style="background:url('images/avator/f1.jpg');background-size:cover;">
 						<span class="mask"></span>
+					</a>
+					<a class="hover" href="javascript:void(0)" style="background:url('images/avator/f2.jpg');background-size:cover;display:none;">
+					</a>
+					<div class="detail">
+						<span class="line-l"></span>
+						<div class="detail-tit">
+							<h3 class="tit">MEI</h3>
+							<p class="cont">DESIGN DIRECTOR</p>
+						</div>
+						<span class="line-r"></span>
+					</div>
+				</li>
+				<li>
+					<a class="default" href="javascript:void(0)" style="background:url('images/avator/g1.jpg');background-size:cover;">
+						<span class="mask"></span>
+					</a>
+					<a class="hover" href="javascript:void(0)" style="background:url('images/avator/g2.jpg');background-size:cover;display:none;">
 					</a>
 					<div class="detail">
 						<span class="line-l"></span>
@@ -139,14 +166,13 @@
 			});
 
 			$('#list_member li').each(function () {
-				var self = $(this);
-				var saveImg = self.find('a').attr('style');
+				var self = $(this);	
 				self.hover(function () {
-					self.addClass('active');
-					self.find('a').attr('style', 'background:url("'+self.find('a').attr('otherimg')+'");background-size:cover;')
+					self.addClass('active').find('a.default').hide().siblings('a.hover').show();
+					
 					self.find('.line-r').width(self.find('.detail').width() - self.find('.tit').outerWidth(true) - self.find('.line-l').outerWidth(true) - 1);
 				}, function () {
-					self.find('a').attr('style', saveImg);
+					self.find('a.hover').hide().siblings('a.default').show();
 					self.removeClass('active');
 				});
 			});

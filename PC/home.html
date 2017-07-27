@@ -7,7 +7,13 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body style="background:#000;">
-	<div class="auto-play" id="auto_play">	
+	<div class="video-wrap" id="videoWrap">
+		<video id="video" class="ac-video-media-controller" autoplay="autoplay" src="images/video/VirtualRiot.mp4">
+			<source src="images/video/VirtualRiot.mp4">
+		</video>
+	</div>
+	
+	<div class="auto-play" id="auto_play" style="display:none;">	
 		<div class="item" style="background: url(images/p1.jpg) no-repeat;background-size: cover;"></div>
 		<div class="item" style="background: url(images/p2.jpg) no-repeat;background-size: cover;"></div>
 		<div class="item" style="background: url(images/p3.jpg) no-repeat;background-size: cover;"></div>
@@ -53,7 +59,7 @@
 
 			var auto_play_length = $('#auto_play .item').length;
 			var index = 0;
-			play();
+			
 			function play () {
 				$('#auto_play .item').eq(index).css('opacity', '0.4').show().animate({opacity: 1}, 2000).siblings('div').hide();
 				if (index < auto_play_length - 1) {
@@ -62,9 +68,17 @@
 					index = 0;
 				}
 			}
-			var player = setInterval(play, 6000);
+			
+			document.getElementById('video').onended = function () {
+			    $('#videoWrap').hide();
+				$('#auto_play').show();
+				play();
+				var player = setInterval(play, 6000);
+			};
 			
 		});
+
+
 
 		function init () {
 			var height_single = ($(window).height() - $('#logo').outerHeight(true) - 28) / 4;

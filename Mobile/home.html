@@ -55,7 +55,6 @@
 
 			var auto_play_length = $('#auto_play .item').length;
 			var index = 0;
-			play();
 			function play () {
 				$('#auto_play .item').eq(index).css('opacity', '0.4').show().animate({opacity: 1}, 2000).siblings('div').hide();
 				if (index < auto_play_length - 1) {
@@ -64,8 +63,9 @@
 					index = 0;
 				}
 			}
-			var player = setInterval(play, 6000);
 			
+			play();
+			var player = setInterval(play, 6000);
 		});
 
 		function init () {
