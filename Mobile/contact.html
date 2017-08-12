@@ -42,9 +42,8 @@
 		<div class="page-r f-l" style="background: #000;position: relative;z-index: 1;">
 			<div class="contact-line" id="line_contact"></div>
 			<div class="contact-detail-wrap" id="wrap_contact_detail">
-				<div class="qrcode-wrap">
-					<img src="images/qrcode.png">
-					<img src="images/qrcode.png">
+				<div class="qrcode-wrap" id="qrcodeWrap">
+					
 				</div>
 				<div class="outlink">
 					<a href="" class="weibo"></a>
@@ -65,23 +64,29 @@
 	<script type="text/javascript" src="js/lib/jquery.js"></script>
 	<script type="text/javascript" src="js/common.js"></script>
 	<script type="text/javascript">
-		$(function () {
+		window.onload = function () {
 			init();
 
+			// 加载二维码图片
+			loadQrcode();
+		};
+		$(function () {
 			$(window).resize(function () {
 				init();
 			});
+
+			
 		});
+
 		function init () {
-			window.setTimeout(function () {
-				$('#inner_contact').find('.line-r').width(
+			$('#inner_contact').find('.line-r').width(
 					$(window).width() * 0.34 - 10 -
 					$('#inner_contact').find('.detail-tit h3').outerWidth(true) - 1);
-			}, 200);
-			
-
 			$('#line_contact').css('margin-top', $('#inner_contact').offset().top + 10 + 'px');
-			
+		}
+
+		function loadQrcode () {
+			$('#qrcodeWrap').html('<img src="images/qrcode.png"><img src="images/qrcode.png">');
 		}
 	</script>
 </body>

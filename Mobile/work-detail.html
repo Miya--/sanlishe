@@ -66,40 +66,14 @@
 	<script type="text/javascript" src="js/lib/iSlider.min.js"></script>
 	<script type="text/javascript" src="js/lib/button.js"></script>
 	<script type="text/javascript">
+		window.onload = function () {
+			init();
+
+			sliderShow();
+		};
+
 		$(function () {
-			$(window).resize(function () {
-				 $('#inner_det').find('.line-r').width($('#inner_det').outerWidth(true) - $('#inner_det').find('.line-l').outerWidth(true) - $('#inner_det').find('#tit').outerWidth(true) - 1);
-			});
-			
-			// slider
-			var sliderList = [{
-		        content : 'images/slider/s1.jpg'
-			},
-			{
-				content : 'images/slider/s2.jpg'
-			},
-			{
-				content : 'images/slider/s3.jpg'
-			},
-			{
-				content : 'images/slider/s4.jpg'
-			}];
-
-			var S = new iSlider({
-		        dom: document.getElementById('iSlider-wrapper'),
-		        data: sliderList,
-		        isLooping: 1,
-		        isAutoplay: true,
-		        isOverspread: 1,
-		        animateTime: 800, // ms
-		        plugins: ['button']
-		    });
-			
-			window.setTimeout(function () {
-				$('#inner_det').find('.line-r').width($('#inner_det').outerWidth(true) - $('#inner_det').find('.line-l').outerWidth(true) - $('#inner_det').find('#tit').outerWidth(true) - 1);
-			}, 200);
-
-	        var en = $('#detail_cont').html();
+			var en = $('#detail_cont').html();
 	        $('#detail_cont').click(function () {
 				if ($(this).attr('flag') === 'ch') {
 					$(this).css('opacity', '0').html(en).css({
@@ -136,7 +110,41 @@
 					$(this).attr('flag', 'ch');
 				}
 	        });
+
+			$(window).resize(function () {
+				init();
+			});
 		});
+
+		function init () {
+			$('#inner_det').find('.line-r').width($('#inner_det').outerWidth(true) - $('#inner_det').find('.line-l').outerWidth(true) - $('#inner_det').find('#tit').outerWidth(true) - 1);
+		}
+
+		function sliderShow () {
+			// slider
+			var sliderList = [{
+		        content : 'images/slider/s1.jpg'
+			},
+			{
+				content : 'images/slider/s2.jpg'
+			},
+			{
+				content : 'images/slider/s3.jpg'
+			},
+			{
+				content : 'images/slider/s4.jpg'
+			}];
+
+			var S = new iSlider({
+		        dom: document.getElementById('iSlider-wrapper'),
+		        data: sliderList,
+		        isLooping: 1,
+		        isAutoplay: true,
+		        isOverspread: 1,
+		        animateTime: 800, // ms
+		        plugins: ['button']
+		    });
+		}
 	</script>
 </body>
 </html>

@@ -31,7 +31,7 @@
 	<div class="work-wrap o-h">
 		<div class="page-l f-l"></div>
 
-		<div class="page-r f-l" style="background: url(images/p2.jpg) no-repeat; background-size: cover;"></div>
+		<div id="pageRightBg" class="page-r f-l"></div>
 	</div>
 	
 	<!-- 作品列表 -->
@@ -85,13 +85,17 @@
 	<script type="text/javascript" src="js/lib/jquery.js"></script>
 	<script type="text/javascript" src="js/common.js"></script>
 	<script type="text/javascript">
-		$(function () {
+		window.onload = function () {
 			init();
 
-			$(window).resize(function () {
-				init();
-			});
-			
+			// 右侧背景大图加载
+			$('#pageRightBg').css({
+				'background': 'url(images/p2.jpg) no-repeat',
+				'background-size': 'cover'
+			});	
+		};
+
+		$(function () {
 			$('#menu_work li').hover(function () {
 				var self = $(this);
 
@@ -100,21 +104,19 @@
 				self.addClass('active').siblings('li').removeClass('active');
 			});
 
-			
+			$(window).resize(function () {
+				init();
+			});
 		});
+
 		function init () {
 			$('.line-c-l').each(function () {
 				var self = $(this);
 				self.width(self.parent('li').width() * 0.34 - self.siblings('.line-l').width() - self.siblings('.year-name').width());
 			});
 
-			
 			var firWork = $('#menu_work li').eq(0);
-			window.setTimeout(function () {
-				firWork.find('.line-c-r, .year-r').width(($('#menu_work').outerWidth(true) * 0.66 - firWork.find('a.first-work').outerWidth(true)) / 2 -1);
-			}, 200);
-			
-			
+			firWork.find('.line-c-r, .year-r').width(($('#menu_work').outerWidth(true) * 0.66 - firWork.find('a.first-work').outerWidth(true)) / 2 -1);
 		}
 	</script>
 </body>

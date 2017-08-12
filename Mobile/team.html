@@ -29,111 +29,7 @@
 
 	<div class="work-detail-wrap o-h">
 		<ul class="member" id="list_member" style="background:#000">
-			<li>
-					<a class="default" href="javascript:void(0)" style="background:url('images/avator/a1.jpg');background-size:cover;">
-						<span class="mask"></span>
-					</a>
-					<a class="hover" href="javascript:void(0)" style="background:url('images/avator/a2.jpg');background-size:cover;display:none;">
-					</a>
-					<div class="detail">
-						<span class="line-l"></span>
-						<div class="detail-tit">
-							<h3 class="tit">QIAN</h3>
-							<p class="cont">DESIGN DIRECTOR</p>
-						</div>
-						<span class="line-r"></span>
-					</div>
-				</li>
-				<li>
-					<a class="default" href="javascript:void(0)" style="background:url('images/avator/b1.jpg');background-size:cover;">
-						<span class="mask"></span>
-					</a>
-					<a class="hover" href="javascript:void(0)" style="background:url('images/avator/b2.jpg');background-size:cover;display:none;">
-					</a>
-					<div class="detail">
-						<span class="line-l"></span>
-						<div class="detail-tit">
-							<h3 class="tit">ZHANG</h3>
-							<p class="cont">DESIGN DIRECTOR</p>
-						</div>
-						<span class="line-r"></span>
-					</div>
-				</li>
-				<li>
-					<a class="default" href="javascript:void(0)" style="background:url('images/avator/c1.jpg');background-size:cover;">
-						<span class="mask"></span>
-					</a>
-					<a class="hover" href="javascript:void(0)" style="background:url('images/avator/c2.jpg');background-size:cover;display:none;">
-					</a>
-					<div class="detail">
-						<span class="line-l"></span>
-						<div class="detail-tit">
-							<h3 class="tit">LUO</h3>
-							<p class="cont">DESIGN DIRECTOR</p>
-						</div>
-						<span class="line-r"></span>
-					</div>
-				</li>
-				<li>
-					<a class="default" href="javascript:void(0)" style="background:url('images/avator/d1.jpg');background-size:cover;">
-						<span class="mask"></span>
-					</a>
-					<a class="hover" href="javascript:void(0)" style="background:url('images/avator/d2.jpg');background-size:cover;display:none;">
-					</a>
-					<div class="detail">
-						<span class="line-l"></span>
-						<div class="detail-tit">
-							<h3 class="tit">TANG</h3>
-							<p class="cont">DESIGN DIRECTOR</p>
-						</div>
-						<span class="line-r"></span>
-					</div>
-				</li>
-				<li>
-					<a class="default" href="javascript:void(0)" style="background:url('images/avator/e1.jpg');background-size:cover;">
-						<span class="mask"></span>
-					</a>
-					<a class="hover" href="javascript:void(0)" style="background:url('images/avator/e2.jpg');background-size:cover;display:none;">
-					</a>
-					<div class="detail">
-						<span class="line-l"></span>
-						<div class="detail-tit">
-							<h3 class="tit">GE</h3>
-							<p class="cont">DESIGN DIRECTOR</p>
-						</div>
-						<span class="line-r"></span>
-					</div>
-				</li>
-				<li>
-					<a class="default" href="javascript:void(0)" style="background:url('images/avator/f1.jpg');background-size:cover;">
-						<span class="mask"></span>
-					</a>
-					<a class="hover" href="javascript:void(0)" style="background:url('images/avator/f2.jpg');background-size:cover;display:none;">
-					</a>
-					<div class="detail">
-						<span class="line-l"></span>
-						<div class="detail-tit">
-							<h3 class="tit">MEI</h3>
-							<p class="cont">DESIGN DIRECTOR</p>
-						</div>
-						<span class="line-r"></span>
-					</div>
-				</li>
-				<li>
-					<a class="default" href="javascript:void(0)" style="background:url('images/avator/g1.jpg');background-size:cover;">
-						<span class="mask"></span>
-					</a>
-					<a class="hover" href="javascript:void(0)" style="background:url('images/avator/g2.jpg');background-size:cover;display:none;">
-					</a>
-					<div class="detail">
-						<span class="line-l"></span>
-						<div class="detail-tit">
-							<h3 class="tit">MEI</h3>
-							<p class="cont">DESIGN DIRECTOR</p>
-						</div>
-						<span class="line-r"></span>
-					</div>
-				</li>
+			
 		</ul>
 	</div>
 
@@ -155,25 +51,6 @@
 	<script type="text/javascript" src="js/common.js"></script>
 	<script type="text/javascript">
 		$(function () {
-			$('ul#list_member li').css('width', 100/3 + '%');
-			init();
-			
-			$('#list_member li').each(function () {
-				var self = $(this);	
-				self.hover(function () {
-					self.addClass('active').find('a.default').hide().siblings('a.hover').show();
-					
-					self.find('.line-r').width(self.find('.detail').width() - self.find('.tit').outerWidth(true) - self.find('.line-l').outerWidth(true) - 1);
-				}, function () {
-					self.find('a.hover').hide().siblings('a.default').show();
-					self.removeClass('active');
-				});
-			});
-
-			$(window).resize(function () {
-				init()
-			});
-
 			var ch = $('#detail_cont').html();
 	        $('#detail_cont').click(function () {
 				if ($(this).attr('flag') === 'ch') {
@@ -192,19 +69,99 @@
 					$(this).attr('flag', 'ch');
 				}	
 	        });
+
+			$(window).resize(function () {
+				init();
+			});
 		});
+
+
+
+		window.onload = function() {
+			init();
+
+			loadTeamInfo();
+		};
+
+		function loadTeamInfo () {
+			var data = [{
+				default: 'images/avator/a1.jpg',
+				hover: 'images/avator/a2.jpg',
+				tit: 'QIAN',
+				cnt: 'DESIGN DIRECTOR'
+			},{
+				default: 'images/avator/b1.jpg',
+				hover: 'images/avator/b2.jpg',
+				tit: 'TANG',
+				cnt: 'DESIGN DIRECTOR'
+			},{
+				default: 'images/avator/c1.jpg',
+				hover: 'images/avator/c2.jpg',
+				tit: 'FU',
+				cnt: 'DESIGN DIRECTOR'
+			},{
+				default: 'images/avator/d1.jpg',
+				hover: 'images/avator/d2.jpg',
+				tit: 'GE',
+				cnt: 'DESIGN DIRECTOR'
+			},{
+				default: 'images/avator/e1.jpg',
+				hover: 'images/avator/e2.jpg',
+				tit: 'LIU',
+				cnt: 'DESIGN DIRECTOR'
+			},{
+				default: 'images/avator/g1.jpg',
+				hover: 'images/avator/g2.jpg',
+				tit: 'SONG',
+				cnt: 'DESIGN DIRECTOR'
+			}];
+
+			var str = '';
+			for (var i = 0; i < data.length; i++) {
+				str += '<li>'
+				+ '<a class="default" href="javascript:void(0)" style="background:url('+data[i].default+');background-size:cover;">'
+					+ '<span class="mask"></span>'
+				+ '</a>'
+				+ '<a class="hover" href="javascript:void(0)" style="background:url('+data[i].hover+');background-size:cover;display:none;">'
+				+ '</a>'
+				+ '<div class="detail">'
+					+ '<span class="line-l"></span>'
+					+ '<div class="detail-tit">'
+						+ '<h3 class="tit">'+data[i].tit+'</h3>'
+						+ '<p class="cont">'+data[i].cnt+'</p>'
+					+ '</div>'
+					+ '<span class="line-r"></span>'
+				+ '</div>'
+				+ '</li>';
+			}
+
+			$('#list_member').html(str);
+
+			$('ul#list_member li').css('width', 100/3 + '%');
+
+			$('#list_member li').each(function () {
+				var self = $(this);	
+				self.hover(function () {
+					self.addClass('active').find('a.default').hide().siblings('a.hover').show();
+					
+					self.find('.line-r').width(self.find('.detail').width() - self.find('.tit').outerWidth(true) - self.find('.line-l').outerWidth(true) - 1);
+				}, function () {
+					self.find('a.hover').hide().siblings('a.default').show();
+					self.removeClass('active');
+				});
+			});
+		}
 
 		function init () {
 			$('#inner_team').find('.line-r').width(
 				$('#inner_det').outerWidth(true) * 0.3 
 				- $('#inner_team').find('.line-l').outerWidth() 
 				- $('#tit').outerWidth() - 1);
-			window.setTimeout(function () {
-				$('#inner_det').find('.line-r').width(
-					$('#inner_det').outerWidth(true) 
-					- $('#inner_det').find('.line-l').width() 
-					- $('#tit').outerWidth() - 1);
-			}, 200);
+			
+			$('#inner_det').find('.line-r').width(
+				$('#inner_det').outerWidth(true) 
+				- $('#inner_det').find('.line-l').width() 
+				- $('#tit').outerWidth() - 1);
 		}
 	</script>
 </body>
