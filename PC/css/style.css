@@ -26,6 +26,19 @@
 .ac-video-media-controller{
 	width: 100%;
 	height: 100%;
+	z-index: 2;
+}
+
+.mask-video{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+	-webkit-filter:blur(10px);
+    -moz-filter:blur(10px);
 }
 
 .logo{
@@ -133,6 +146,7 @@ ul.menu li .line-r{
 .work-wrap .page-r{
 	width: 75%;
 	height: 100%;
+	background: #000;
 }
 
 .menu-work{
@@ -157,8 +171,8 @@ ul.menu li .line-r{
 	float: left;
 }
 .menu-work .line-l,
-.menu-work li .line-c-r,
-.menu-work li .work-list
+.menu-work > li .line-c-r,
+.menu-work > li .work-list
 {
 	visibility:hidden;
 	float: left;
@@ -167,10 +181,10 @@ ul.menu li .line-r{
 	visibility:hidden;
 	float: right;
 }
-.menu-work li.active .line-l,
-.menu-work li.active .line-c-r,
-.menu-work li.active .work-list,
-.menu-work li.active .year-r
+.menu-work li.active>.line-l,
+.menu-work li.active>.line-c-r,
+.menu-work li.active>.work-list,
+.menu-work li.active>.year-r
 {
 	visibility: visible;
 }
@@ -205,6 +219,7 @@ ul.menu li .line-r{
 	height: 1px;
 	background: #766d65;
 	margin-top: 30px;
+	display: block;
 }
 .menu-work li a.first-work{
 	display: none;
@@ -224,6 +239,7 @@ ul.menu li .line-r{
 	height: 1px;
 	background: #766d65;
 	margin-top: 30px;
+	display: block;
 }
 
 .menu-work .year-name{
@@ -235,8 +251,7 @@ ul.menu li .line-r{
 	text-align: center;
 	font-family: "dinlight";
 }
-.work-list li{
-}
+
 .work-list a{
 	display: block;
 	color: #fff;
@@ -245,6 +260,16 @@ ul.menu li .line-r{
 	line-height: 60px;
 	text-align: center;
 	font-family: "dinlight";
+    float: left;
+    padding: 0 10px;
+}
+
+.work-list .line-c-r,
+.work-list .year-r {
+	visibility: hidden;
+}
+.work-list li{
+	overflow: hidden;
 }
 
 .work-detail-wrap {

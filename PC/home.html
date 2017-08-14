@@ -11,14 +11,17 @@
 		<video id="video" class="ac-video-media-controller" autoplay="autoplay" src="images/video/VirtualRiot.mp4">
 			<source src="images/video/VirtualRiot.mp4">
 		</video>
+		<div class="mask-video" id="mask_video"></div>
 	</div>
 	
+	<!--
 	<div class="auto-play" id="auto_play" style="display:none;">	
 		<div class="item" style="background: url(images/p1.jpg) no-repeat;background-size: cover;"></div>
 		<div class="item" style="background: url(images/p2.jpg) no-repeat;background-size: cover;"></div>
 		<div class="item" style="background: url(images/p3.jpg) no-repeat;background-size: cover;"></div>
 		<div class="item" style="background: url(images/p4.jpg) no-repeat;background-size: cover;"></div>
 	</div>
+	-->
 
 	<div class="logo" id="logo"><img src="images/logo.png"></div>
 	
@@ -59,6 +62,7 @@
 
 			var auto_play_length = $('#auto_play .item').length;
 			var index = 0;
+			var video_mask_flag = false; // 是否显示视频遮罩
 			
 			function play () {
 				$('#auto_play .item').eq(index).css('opacity', '0.4').show().animate({opacity: 1}, 2000).siblings('div').hide();
@@ -68,12 +72,18 @@
 					index = 0;
 				}
 			}
-			
-			document.getElementById('video').onended = function () {
-			    $('#videoWrap').hide();
+			var obj_video = document.getElementById('video');
+			obj_video.onended = function () {
+			    /* 视频播放完毕开始播放图片 赞注释
 				$('#auto_play').show();
 				play();
-				var player = setInterval(play, 6000);
+				var player = setInterval(play, 6000);*/
+				
+				if (!video_mask_flag) {
+					video_mask_flag = true;
+					$('#mask_video').show();
+				}
+				obj_video.play();
 			};
 			
 		});
