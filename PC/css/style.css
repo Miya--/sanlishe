@@ -189,6 +189,11 @@ ul.menu li .line-r{
 	visibility: visible;
 }
 
+.menu-work li.line-no>.line-c-r,
+.menu-work li.line-no>.year-r {
+	visibility: hidden;
+}
+
 .menu-work li .work-list{
 	display: none;
 	position: absolute;
@@ -631,7 +636,7 @@ ul.member li.active .mask{
 	z-index: 2;
 	top: 20%;
 	left: 50%;
-	width: 40%;
+	width: 30%;
 	line-height: 20px;
 	font-weight: normal;
 }

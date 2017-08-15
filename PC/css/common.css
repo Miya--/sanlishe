@@ -72,3 +72,20 @@ button{ border:none; outline:0;}
 .d-b{
 	display:block!important;
 }
+
+/* 图片黑白滤镜 */
+.gray { 
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    
+    filter: grayscale(100%);
+	
+    filter: gray;
+}
+
+/* 页面模糊 */
+.page-blur{
+	-webkit-filter: blur(5px);
+}

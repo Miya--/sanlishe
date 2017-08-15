@@ -81,7 +81,9 @@
 				
 				if (!video_mask_flag) {
 					video_mask_flag = true;
-					$('#mask_video').show();
+					if (!$('#videoWrap').hasClass('page-blur')) {
+						$('#videoWrap').addClass('page-blur');
+					}
 				}
 				obj_video.play();
 			};

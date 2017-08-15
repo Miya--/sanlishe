@@ -165,17 +165,26 @@
 				 }
 			});
 
+			// 第一个默认显示
+			var memFir = $('#list_member li').eq(0);
+			memFir.addClass('active').find('a.default').hide().siblings('a.hover').show();
+			memFir.find('.line-r').width(memFir.find('.detail').width() - memFir.find('.tit').outerWidth(true) - memFir.find('.line-l').outerWidth(true) - 1);
+
 			$('#list_member li').each(function () {
 				var self = $(this);	
+				var timer = null;
 				self.hover(function () {
-					self.addClass('active').find('a.default').hide().siblings('a.hover').show();
+					timer = window.setTimeout(function () {
+						self.addClass('active').find('a.default').hide().siblings('a.hover').show();
 					
-					self.find('.line-r').width(self.find('.detail').width() - self.find('.tit').outerWidth(true) - self.find('.line-l').outerWidth(true) - 1);
+						self.find('.line-r').width(self.find('.detail').width() - self.find('.tit').outerWidth(true) - self.find('.line-l').outerWidth(true) - 1);
+
+						self.siblings('li').removeClass('active').find('a.default').show().siblings('a.hover').hide();
+					}, 200);
 				}, function () {
-					self.find('a.hover').hide().siblings('a.default').show();
-					self.removeClass('active');
+					window.clearTimeout(timer);
 				});
-			});
+			});	
 
 			$(window).resize(function () {
 				$('#inner_team').find('.line-r').width($(window).width() * 0.25 - $('#inner_team').find('.line-l').outerWidth() - $('#tit').outerWidth() - 1);

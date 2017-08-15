@@ -7,7 +7,7 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/animate.min.css">
 </head>
-<body>
+<body style="background: #000;">
 	<!-- 导航  -->
 	<div class="nav" id="nav">
 		<a href="home.html" ch="首页" en="HOME">HOME</a>
@@ -19,7 +19,7 @@
 	<div class="work-wrap o-h">
 		<div class="page-l f-l"></div>
 
-		<div id="workImg" class="page-r f-l" style="background: url(images/p2.jpg) no-repeat; background-size: cover;"></div>
+		<div id="workImg" class="page-r f-l gray" style="background: url(images/p2.jpg) no-repeat; background-size: cover;"></div>
 	</div>
 	
 	<!-- 作品列表 -->
@@ -144,7 +144,7 @@
 			$('#menu_work>li').hover(function () {
 				var self = $(this);
 				if (!self.hasClass('active')) {
-					self.addClass('active').siblings('li').removeClass('active');
+					self.addClass('active').removeClass('line-no').siblings('li').removeClass('active');
 
 					self.find('ul.work-list li').removeClass('active');
 					self.find('ul.work-list').find('a').each(function () {
@@ -154,13 +154,25 @@
 					init();
 				}
 
-				$('#workImg').css('opacity', '0').attr('style', 'background: #000 url('+self.find('a.first-work').attr('workimg')+') no-repeat; background-size: cover;opacity:0;').animate({opacity: 1}, 2000);
+				$('#workImg').css('opacity', '0').attr('style', 'background: #000 url('+self.find('a.first-work').attr('workimg')+') no-repeat; background-size: cover;');
+			});
 
-				self.find('a').hover(function () {
-					var _self = $(this);
-					$('#workImg').css('opacity', '0').attr('style', 'background: #000 url('+_self.attr('workimg')+') no-repeat; background-size: cover;opacity:0;').animate({opacity: 1}, 2000);
+			$('a.first-work').each(function () {
+				var self = $(this);
+
+				var timer = null;
+				self.hover(function () {
+					timer = window.setTimeout(function () {
+						if (self.parent().hasClass('line-no')) {
+							self.parent().removeClass('line-no');
+							$('#workImg').attr('style', 'background: #000 url('+self.attr('workimg')+') no-repeat; background-size: cover;');
+							self.siblings('ul.work-list').find('li').removeClass('active');
+						}
+						
+					}, 500);
+				}, function () {
+					window.clearTimeout(timer);
 				});
-				
 			});
 
 			$(window).resize(function () {
@@ -188,12 +200,25 @@
 					_self.siblings('.line-c-r, .year-r').width(($(window).width() * 0.75 - _self.outerWidth(true)) / 2 - 1);
 				});
 
+				var timer = null;
 				self.find('li').hover(function () {
 					var _self = $(this);
 
-					_self.addClass('active').siblings('li').removeClass('active');
-
-					$('#workImg').css('opacity', '0').attr('style', 'background: #000 url('+_self.find('a').attr('workimg')+') no-repeat; background-size: cover;opacity:0;').animate({opacity: 1}, 2000);
+					if (_self.hasClass('active')) {
+						return;
+					}
+					
+					var flag = false;
+					timer = window.setTimeout(function () {
+						if (!self.parent().hasClass('line-no')) {
+							self.parent().addClass('line-no');
+						}
+						
+						_self.addClass('active').siblings('li').removeClass('active');
+						$('#workImg').attr('style', 'background: #000 url('+_self.find('a').attr('workimg')+') no-repeat; background-size: cover;');
+					}, 500);
+				}, function () {
+					window.clearTimeout(timer);
 				});
 			});
 		}
